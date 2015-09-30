@@ -1,0 +1,86 @@
+Pin use document pic18f25k80
+
+pic18f25k80 pinout
++------+--------------------------+------------------------------------+------+
+|    1 | MCLR/RE3                 | RB7/PGD/T3G/RX2/DT2/KBI3           |   28 |
+|    2 | RA0/CVREF/AN0/ULPWU      | RB6/PGC/TX2/CK2/KBI2               |   27 |
+|    3 | RA1/AN1/C1INC            | RB5/T0CKI/T3CKI/CCP5/KBI1          |   26 |
+|    4 | RA2/VREF-/AN2/C2INC      | RB4/AN9/C2INA/ECCP1/P1A/CTPLS/KBI0 |   25 |
+|    5 | RA3/VREF+/AN3            | RB3/CANRX/C2OUT/P1D/CTED2/INT3     |   24 |
+|    6 | VDDCORE/VCAP             | RB2/CANTX/C1OUT/P1C/CTED1/INT2     |   23 |
+|    7 | RA5/AN4/HLVDIN/T1CKI/SSR | RB1/AN8/C1INB/P1B/CTDIN/INT1       |   22 |
+|    8 | VSS                      | RB0/AN10/C1INA/FLT0/INT0           |   21 |
+|    9 | OSC1/CLKIN/RA7           | VDD                                |   20 |
+|   10 | OSC2/CLKOUT/RA6          | VSS                                |   19 |
+|   11 | RC0/SOSCO/SCLKI          | RC7/CANRX/RX1/DT1/CCP4             |   18 |
+|   12 | RC1/ISOSCI               | RC6/CANTX/TX1/CK1/CCP3             |   17 |
+|   13 | RC2/T1G/CCP2             | RC5/SDO                            |   16 |
+|   14 | RC3/REFO/SCL/SCK         | RC4/SDA/SDI                        |   15 |
++------+--------------------------+------------------------------------+------+
+
+
+BCD segment drivers 4 (port A) GPIO
+------------------------------------
+RA0  2
+RA1  3
+RA2  4
+RA3  5
+
+digit Drivers 6
+------------------------------------
+RA5  7
+RB0  2
+RB1  22
+RB4  25
+RB5  26
+
+misc
+------------------------------------
+RC0  11  (Decimal point)
+RC1  12  (negative sign)
+RC2  13  (status light)
+RE3  1   (speaker?)
+
+CAN  
+------------------------------------
+CANRX  24
+CANTX  23
+
+Oscillator cyrstal external setup
+------------------------------------
+OSC1  9
+OSC2  10
+
+*Serial 1 (pins could be broken out for later use)
+--------------------------------------------------
+TX1  17
+RX1  18
+
+*Serial 2 (pins could be broken out for later use)
+--------------------------------------------------
+TX2  27
+RX2  28
+
+*SPI (also I2C) (pins could be broken out for later use)
+--------------------------------------------------------
+SCK  14
+SDA  15
+SDO  16
+
+pic18f25k80 pinout
++------+---------------+----------+------+
+|    1 | MCLR/RE3      | PGD/RX2  |   28 |
+|    2 | RA0           | PGC/TX2  |   27 |
+|    3 | RA1           | RB5      |   26 |
+|    4 | RA2           | RB4      |   25 |
+|    5 | RA3           | CANRX    |   24 |
+|    6 | VDDCORE/VCAP  | CANTX    |   23 |
+|    7 | RA5           | RB1      |   22 |
+|    8 | VSS           | RB0      |   21 |
+|    9 | OSC1		   | VDD      |   20 |
+|   10 | OSC2          | VSS      |   19 |
+|   11 | RC0           | RX1      |   18 |
+|   12 | RC1           | TX1      |   17 |
+|   13 | RC2           | SDO      |   16 |
+|   14 | SCK           | SDI      |   15 |
++------+---------------+----------+------+

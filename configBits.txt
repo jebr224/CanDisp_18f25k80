@@ -1,0 +1,82 @@
+Configuration bits (section 28)
+*(change when release build)
+
+
+CONFIG1L = 0b01011101 = 0x5D
+   XINST     = 1
+   SOSCSEL   = 3
+   INTOSCSEL = 1
+   RETEN     = 1
+
+CONFIG1H = 0b10010011 = 0x93
+   IESO   = 1
+   FCMEN  = 0
+   PLLCFG = 1 //oscillator multplied by 4
+   FOSC   = 3 //0011  4 MHz-16 MHz
+
+CONFIG2L = 0b00000000 = 0x00
+	BORMV = 0
+	BORV  = 0
+	BOREN = 0
+	PWRT  = 0
+
+CONFIG2H = 0b00110000 = 0x30
+	WDTPS = 12 //01100  (16.384s)
+	WDTEN = 0 //00 *wdog off for dev
+
+CONFIG3H = 0b00000001 = 0x01
+	MCLRE   = 0
+	MSSPMSK = 0
+	T3CKMX  = 0
+	T0CKMX  = 0
+	CANMX   = 1 
+	
+CONFIG4L = 0b00010001 = 0x11
+	DEBUG  = 0 // In-Circuit Debug
+	BBSIZ0 = 1
+	STVREN = 0 //* stack overflow no reset for dev
+
+CONFIG5L = 0b00001111 = 0x0F
+	CP3 = 1
+	CP2 = 1
+	CP1 = 1
+	CP0 = 1
+
+CONFIG5H = 0b11000000 = 0xC0
+	CPD = 1
+	CPB = 1
+
+CONFIG6L = 0b00001111 = 0x0F
+	WRT3 = 1
+	WRT2 = 1
+	WRT1 = 1
+	WRT0 = 1
+
+CONFIG6H = 0b11100000 = 0xE0 
+	WRTD = 1
+	WRTB = 1
+	WRTC = 1
+	
+CONFIG7L = 0b00001111 = 0x0F
+	EBTR3 = 1
+	EBTR2 = 1
+	EBTR1 = 1
+	EBTR0 = 1
+	
+CONFIG7H = 0b01000000 = 0x40
+	EBTRB =1
+	
+
+
+300000h CONFIG1L = 0x5D
+300001h CONFIG1H = 0x93
+300002h CONFIG2L = 0x00
+300003h CONFIG2H = 0x30 *
+300005h CONFIG3H = 0x01
+300006h CONFIG4L = 0x11 *
+300008h CONFIG5L = 0x0F
+300009h CONFIG5H = 0xC0
+30000Ah CONFIG6L = 0x0F
+30000Bh CONFIG6H = 0xE0
+30000Ch CONFIG7L = 0x0F
+30000Dh CONFIG7H = 0x40
