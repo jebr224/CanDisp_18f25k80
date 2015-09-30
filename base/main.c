@@ -49,6 +49,7 @@
 * ADDITIONAL NOTES:
 * Code Tested on:
 * PIC18 Explorer Demo Board with PIC18F46K80 (PIC18F66K80 family) controller + ECAN/LIN Daughterboard 
+* Changing to code for PIC18f25k50 (JB)
 *
 * DESCRIPTION:
 * In this example, CPU is initially configured to run from external 
@@ -132,7 +133,8 @@ void main(void)
         
         if(ECAN_Receive())
         {
-            LATD++;
+//            LATD++;
+			LATCbits.LATC2 = 1;
         }
 
         Heartbeat();
@@ -160,8 +162,8 @@ void InitDevice(void)
     
     // Initialize I/O to be digital, with PORTD (LEDs) as outputs and PORTB as inputs (pushbutton)
     ANCON0 = ANCON1 = 0x00;
-    LATD = 0x00;
-    TRISD = 0x00;
+   // LATD = 0x00;
+//    TRISD = 0x00;
     TRISB = 0xFF;
     
     // Initialize CAN module
@@ -227,7 +229,8 @@ void Heartbeat(void)
     else
     {
         heartbeatCount = 0;
-        LATDbits.LATD7 ^= 1;
+       // LATDbits.LATD7 ^= 1;
+		LATCbits.LATC2 ^= 1;
     }
 }
 
