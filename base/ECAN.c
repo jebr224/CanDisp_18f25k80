@@ -128,7 +128,7 @@ unsigned char temp_D7;
 *                       Configure the CAN Module
 *
 *********************************************************************/
-void InitECAN(void)
+void startUp_ECAN(void)
 {
     // Enter CAN module into config mode
     CANCON = 0x80;    //REQOP<2:0>=100

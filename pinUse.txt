@@ -43,8 +43,8 @@ RE3  1   (speaker?)
 
 CAN  
 ------------------------------------
-CANRX  24
-CANTX  23
+CANRX  RB3  24
+CANTX  RB2  23
 
 Oscillator cyrstal external setup
 ------------------------------------

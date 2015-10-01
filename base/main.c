@@ -41,20 +41,18 @@
 *
 * REVISION HISTORY:
 *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-* Author        Date      	Comments on this revision
+* Author           Date      	Comments on this revision
 *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-* Manning C.    12/1/2010	First release of source file
+* Manning C.       12/1/2010	First release of source file
+* John Broadbent   9/30/2015    CanDisp
 *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 *
 * ADDITIONAL NOTES:
 * Code Tested on:
-* PIC18 Explorer Demo Board with PIC18F46K80 (PIC18F66K80 family) controller + ECAN/LIN Daughterboard 
-* Changing to code for PIC18f25k50 (JB)
+* Changing to code for PIC18f25k50 (JB) Not tested
 *
 * DESCRIPTION:
-* In this example, CPU is initially configured to run from external 
-* secondary osc and then clock switching is initiated to run from 
-* Internal FRC.
+* This is the code base for the CanDisp project.
 *********************************************************************/
 
 
@@ -66,7 +64,7 @@
 *********************************************************************/
 #include <p18cxxx.h>
 #include "ECAN.h"
-
+#include "startUp.h"
 
 
 
@@ -122,8 +120,8 @@ unsigned char buttonWasPressed;
 *********************************************************************/
 void main(void)
 {    
-    InitDevice();
-    
+    //InitDevice();
+	startUp_device();//startup.c
     while(1)
     {
         if(ButtonPressed())
@@ -133,7 +131,6 @@ void main(void)
         
         if(ECAN_Receive())
         {
-//            LATD++;
 			LATCbits.LATC2 = 1;
         }
 
@@ -144,31 +141,6 @@ void main(void)
     }
 }
 
-
-/*********************************************************************
-*
-*                       Initialize the Device 
-*
-*********************************************************************/
-void InitDevice(void)
-{
-    // Set the internal oscillator to 64MHz
-    OSCCONbits.IRCF = 7;
-    OSCTUNEbits.PLLEN = 1;
-    
-    // Initialize global variables to 0
-    heartbeatCount = 0;
-    buttonWasPressed = 0;
-    
-    // Initialize I/O to be digital, with PORTD (LEDs) as outputs and PORTB as inputs (pushbutton)
-    ANCON0 = ANCON1 = 0x00;
-   // LATD = 0x00;
-//    TRISD = 0x00;
-    TRISB = 0xFF;
-    
-    // Initialize CAN module
-    InitECAN();
-}
 
 
 /*********************************************************************

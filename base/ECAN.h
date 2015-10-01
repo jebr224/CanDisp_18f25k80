@@ -74,7 +74,7 @@
 *                        Function Prototypes 
 *
 *********************************************************************/
-void InitECAN(void);
+void startUp_ECAN(void);
 
 unsigned char ECAN_Receive(void);
 
