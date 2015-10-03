@@ -124,17 +124,17 @@ void main(void)
 	startUp_device();//startup.c
     while(1)
     {
-        if(ButtonPressed())
-        {
+        //if(ButtonPressed())
+        //{
             ECAN_Transmit();
-        }
+        //}
         
-        if(ECAN_Receive())
-        {
-			LATCbits.LATC2 = 1;
-        }
+       // if(ECAN_Receive())
+        //{
+		//	LATCbits.LATC2 = 1;
+        //}
 
-        Heartbeat();
+        //Heartbeat();
         
         // Delay for one millisecond to debounce pushbutton
         Delay(ONE_MS);

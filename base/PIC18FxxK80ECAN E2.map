@@ -1,5 +1,5 @@
 MPLINK 5.00, LINKER
-Linker Map File - Created Fri Oct 02 23:28:43 2015
+Linker Map File - Created Sat Oct 03 00:11:37 2015
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
@@ -20,16 +20,16 @@ Linker Map File - Created Fri Oct 02 23:28:43 2015
                    .cinit    romdata   0x00001e    program   0x00000e
               .code_seg.o       code   0x00002c    program   0x000354
              .code_ECAN.o       code   0x000380    program   0x0001be
-             .code_main.o       code   0x00053e    program   0x0000a2
-               _cinit_scn       code   0x0005e0    program   0x00009e
-          .code_startUp.o       code   0x00067e    program   0x000092
-                    .code       code   0x000710    program   0x000020
-             _startup_scn       code   0x000730    program   0x00001c
-          .idata_ECAN.o_i    romdata   0x00074c    program   0x000000
-          .idata_main.o_i    romdata   0x00074c    program   0x000000
-        .idata___init.o_i    romdata   0x00074c    program   0x000000
-            .code_c018i.o       code   0x00074c    program   0x000000
-         .idata_c018i.o_i    romdata   0x00074c    program   0x000000
+               _cinit_scn       code   0x00053e    program   0x00009e
+          .code_startUp.o       code   0x0005dc    program   0x000094
+             .code_main.o       code   0x000670    program   0x000090
+                    .code       code   0x000700    program   0x000020
+             _startup_scn       code   0x000720    program   0x00001c
+          .idata_ECAN.o_i    romdata   0x00073c    program   0x000000
+          .idata_main.o_i    romdata   0x00073c    program   0x000000
+        .idata___init.o_i    romdata   0x00073c    program   0x000000
+            .code_c018i.o       code   0x00073c    program   0x000000
+         .idata_c018i.o_i    romdata   0x00073c    program   0x000000
     .config_300000_main.o    romdata   0x300000    program   0x000001
                  .tmpdata      udata   0x000000       data   0x000005
                 MATH_DATA      udata   0x000005       data   0x000002
@@ -56,9 +56,9 @@ Linker Map File - Created Fri Oct 02 23:28:43 2015
                               Program Memory Usage 
                                Start         End      
                            ---------   ---------      
-                            0x000000    0x00074b      
+                            0x000000    0x00073b      
                             0x300000    0x300000      
-            1869 out of 33816 program addresses used, program memory utilization is 5%
+            1853 out of 33816 program addresses used, program memory utilization is 5%
 
 
 
@@ -66,47 +66,47 @@ Linker Map File - Created Fri Oct 02 23:28:43 2015
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
                   BCDpins   0x0000a2    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\seg.c
-            ButtonPressed   0x000568    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\main.c
-                    Delay   0x00059a    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\main.c
+            ButtonPressed   0x000688    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\main.c
+                    Delay   0x0006ba    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\main.c
              ECAN_Receive   0x000418    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\ECAN.c
             ECAN_Transmit   0x000512    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\ECAN.c
-                Heartbeat   0x0005c4    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\main.c
+                Heartbeat   0x0006e4    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\main.c
        ___return_lbl00000   0x000004    program     static                          
-       ___return_lbl00001   0x00074a    program     static                          
+       ___return_lbl00001   0x00073a    program     static                          
        ___return_lbl00001   0x00000c    program     static                          
-       ___return_lbl00002   0x00067c    program     static                          
+       ___return_lbl00002   0x0005da    program     static                          
        ___return_lbl00003   0x00001c    program     static                          
                __config_0   0x300000    program     static C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\main.c
                    __init   0x000006    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
-            __zero_memory   0x000710    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
-                _do_cinit   0x0005e0    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+            __zero_memory   0x000700    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
+                _do_cinit   0x00053e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                    _entry   0x000000    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                 _startup   0x000730    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                compare_l   0x000726    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
-                copy_loop   0x000652    program     static                          
-            copy_one_byte   0x000658    program     static                          
-                     done   0x00067c    program     static                          
-             done_copying   0x000666    program     static                          
+                 _startup   0x000720    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                compare_l   0x000716    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
+                copy_loop   0x0005b0    program     static                          
+            copy_one_byte   0x0005b6    program     static                          
+                     done   0x0005da    program     static                          
+             done_copying   0x0005c4    program     static                          
            high_interrupt   0x000008    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
-                 high_isr   0x00067e    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
-                     loop   0x000740    program     static                          
-                   loop_h   0x00071e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
-                   loop_l   0x000728    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
+                 high_isr   0x0005dc    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
+                     loop   0x000730    program     static                          
+                   loop_h   0x00070e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
+                   loop_l   0x000718    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
             low_interrupt   0x000018    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
-                  low_isr   0x000694    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
-                     main   0x00053e    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\main.c
+                  low_isr   0x0005f2    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
+                     main   0x000670    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\main.c
        setFrist3SegValues   0x0001bc    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\seg.c
        setSecondSegValues   0x00029c    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\seg.c
              setSegValues   0x0000dc    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\seg.c
              startUp_ECAN   0x000380    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\ECAN.c
-             startUp_GPIO   0x0006da    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
-       startUp_OSCILLATOR   0x0006f4    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
-           startUp_device   0x000700    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
-       startUp_interrupts   0x0006aa    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
-            startUp_timer   0x0006d2    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
-                     test   0x0005fa    program     static                          
+             startUp_GPIO   0x000638    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
+       startUp_OSCILLATOR   0x000652    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
+           startUp_device   0x00065e    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
+       startUp_interrupts   0x000608    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
+            startUp_timer   0x000630    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
+                     test   0x000558    program     static                          
                 updateSeg   0x00002c    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\seg.c
-               zero_block   0x00071e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
+               zero_block   0x00070e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
                    ADCON0   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
                ADCON0bits   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
                    ADCON1   0x000fc1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
@@ -985,32 +985,32 @@ Linker Map File - Created Fri Oct 02 23:28:43 2015
              startUp_ECAN   0x000380    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\ECAN.c
              ECAN_Receive   0x000418    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\ECAN.c
             ECAN_Transmit   0x000512    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\ECAN.c
-                     main   0x00053e    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\main.c
-            ButtonPressed   0x000568    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\main.c
-                    Delay   0x00059a    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\main.c
-                Heartbeat   0x0005c4    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\main.c
-                _do_cinit   0x0005e0    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     test   0x0005fa    program     static                          
-                copy_loop   0x000652    program     static                          
-            copy_one_byte   0x000658    program     static                          
-             done_copying   0x000666    program     static                          
-       ___return_lbl00002   0x00067c    program     static                          
-                     done   0x00067c    program     static                          
-                 high_isr   0x00067e    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
-                  low_isr   0x000694    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
-       startUp_interrupts   0x0006aa    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
-            startUp_timer   0x0006d2    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
-             startUp_GPIO   0x0006da    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
-       startUp_OSCILLATOR   0x0006f4    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
-           startUp_device   0x000700    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
-            __zero_memory   0x000710    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
-                   loop_h   0x00071e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
-               zero_block   0x00071e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
-                compare_l   0x000726    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
-                   loop_l   0x000728    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
-                 _startup   0x000730    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     loop   0x000740    program     static                          
-       ___return_lbl00001   0x00074a    program     static                          
+                _do_cinit   0x00053e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     test   0x000558    program     static                          
+                copy_loop   0x0005b0    program     static                          
+            copy_one_byte   0x0005b6    program     static                          
+             done_copying   0x0005c4    program     static                          
+       ___return_lbl00002   0x0005da    program     static                          
+                     done   0x0005da    program     static                          
+                 high_isr   0x0005dc    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
+                  low_isr   0x0005f2    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
+       startUp_interrupts   0x000608    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
+            startUp_timer   0x000630    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
+             startUp_GPIO   0x000638    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
+       startUp_OSCILLATOR   0x000652    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
+           startUp_device   0x00065e    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
+                     main   0x000670    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\main.c
+            ButtonPressed   0x000688    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\main.c
+                    Delay   0x0006ba    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\main.c
+                Heartbeat   0x0006e4    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\main.c
+            __zero_memory   0x000700    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
+               zero_block   0x00070e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
+                   loop_h   0x00070e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
+                compare_l   0x000716    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
+                   loop_l   0x000718    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
+                 _startup   0x000720    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     loop   0x000730    program     static                          
+       ___return_lbl00001   0x00073a    program     static                          
                __config_0   0x300000    program     static C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\main.c
                   __tmp_0   0x000000       data     static C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\main.c
                   __tmp_0   0x000000       data     static C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\seg.c

@@ -6,6 +6,7 @@
 
 
     //I was planning on using a crystal, but this pretty
+	//(in this branch this is the plan)
 	// Set the internal oscillator to 64MHz
 	//    OSCCONbits.IRCF = 7;
 	//    OSCTUNEbits.PLLEN = 1;
@@ -19,6 +20,8 @@ void high_isr(void){
 	//LATBbits.LATB3 ^= 1;       //Toggle portB pin 3 (red LED)
 	//parse message and update values
 	
+	newCanMessage(); //can
+
 	PIR5 &= 0b111111100; //clear the interrupt flag so that another interrupt can happen
 	
 }
@@ -99,9 +102,9 @@ void startUp_timer(void){
 	//each digit must have a freq  of at least 50 Hz, we have 6 digits so a min freq is 50*6=300
 	// (foce / prescaler) =  24mHz /1 = 24 Mhz
     //(clk to over flow  = 24Mhz / 2^16 = 366.21 hz
-	T1CON = 0b01001111;
+	T1CON = 0b01011111;
 			//TMR1CS 01
-			//T1CKS  00 (1:1) 
+			//T1CKS  01 (1:2) 
 			//SOSCEN 1 (I think?)
 			//T1SYNC 1  
 			//RD16   1
@@ -146,17 +149,32 @@ void startUp_GPIO(void){
 
 
 void startUp_OSCILLATOR(void){
-	//external osc freq will be 6Mhz
-	//4X pll, mean system freq will be 24 Mhz
+		// Set the internal oscillator to 64MHz
+		//(I don't config using the structs below)
+	   //OSCCONbits.IRCF = 7;
+	   //OSCTUNEbits.PLLEN = 1;
 	
-	OSCCON = 0b11111000;
+		OSCCON = 0b11111110;
+			//IDLEN =  0b1	
+			//IRCF =   0b111
+			//OSTS =   0b1
+			//HFIOFS = 0b1
+			//scs =    0b10 //(HF-INTOSC, I will change FOSC<3:0>, anyway)
+
+		OSCTUNE = 0b0100000;
+			//INTSRCC = 0
+			//PLLEN =   1
+			//tune  =   000000
+
+    //6Mhz 4pll to 24Mhz
+	//	OSCCON = 0b11111000;
 			//pg 53
 			//IDLEN 1
 			//IRCF 111
 			//OSTS 1
 			//HFIOFS 0
 			//scs 00
-	OSCTUNE = 0b1100000;
+	// OSCTUNE = 0b1100000;
 			//intsrc 1
 			//pllen 1
 			//tun 0
@@ -173,7 +191,7 @@ void startUp_device(void){
 	startUp_timer();
 	startUp_GPIO();
 	startUp_ECAN();
-
+	interrupts_on;
 	return;
 
 }

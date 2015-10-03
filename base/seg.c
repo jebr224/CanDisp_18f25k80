@@ -87,3 +87,7 @@ unsigned char setSecondSegValues(unsigned char* data){
 	}
 	return isError;
 }
+
+
+
+

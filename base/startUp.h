@@ -1,5 +1,5 @@
-#define interrupts_off ININTCON &= 0b01111111
-#define interrupts_on ININTCON  |= 0b100000001
+#define interrupts_off (INTCON &= 0b01111111)
+#define interrupts_on (INTCON  |= 0b100000001)
 
 void high_isr(void);
 void low_isr(void);

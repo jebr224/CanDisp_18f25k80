@@ -8,8 +8,8 @@ unsigned char g_digitMask = 0xff;
 unsigned char g_decPoint1 = 1;
 unsigned char g_decPoint2 = 1;
 
-void updateSeg(void);
-void BCDpins(unsigned char num);
+void updateSeg(void);            //internal
+void BCDpins(unsigned char num); //internal
 
 unsigned char setSegValues(unsigned char* data);
 unsigned char setFrist3SegValues(unsigned char* data);
