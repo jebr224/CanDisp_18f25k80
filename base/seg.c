@@ -34,7 +34,14 @@ void updateSeg(void){
 		case 5:
 			LATBbits.LATB5 = 1;			
 			LATBbits.LATB5 = 0;
+	
 	}
+	if((g_currentDigit == g_decPoint1) || (g_currentDigit+3 == g_decPoint2)){
+		LATCbits.LATC0=0; //trun on
+	}else{
+		LATCbits.LATC0=0; //turn off
+	}
+
 
 }
 
@@ -43,4 +50,40 @@ void BCDpins(unsigned char num){
 		num =10;
 	}
 	LATA=num & 0b00001111;
+}
+
+unsigned char setSegValues(unsigned char* data){
+	unsigned char isError= FALSE;
+	int i ;
+	for(i =0; i<6;i++){
+		if ((data[i] > 9 )||(data[i]<0)){
+			isError = TRUE;
+		}
+		g_dispValues[i] = data[i];//deep copy
+	}
+	return isError;
+}
+
+unsigned char setFrist3SegValues(unsigned char* data){
+	unsigned char isError= FALSE;
+	int i;
+	for(i =0; i<3;i++){
+		if ((data[i] > 9 )||(data[i]<0)){
+			isError = TRUE;
+		}
+		g_dispValues[i] = data[i];//deep copy
+	}
+	return isError;
+}
+
+unsigned char setSecondSegValues(unsigned char* data){
+	unsigned char isError= FALSE;
+	int i;
+	for(i =3; i<6;i++){
+		if ((data[i] > 9 )||(data[i]<0)){
+			isError = TRUE;
+		}
+		g_dispValues[i] = data[i];//deep copy
+	}
+	return isError;
 }

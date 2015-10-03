@@ -65,7 +65,7 @@ void startUp_interrupts(void){
 	//high-priority interrupt vector is at 0x0008
 	//low-priority  interrupt vector is at 0x0018
 
-	INTCON = 0b11100100;//global interrupt bit on, 
+	INTCON = 0b01100100;//global interrupt bit off (when we are done with config we will turn on), 
 						//peripheral interrupt on,
 						//both timer interrupt on
 						//hardware interrupt off,
@@ -74,22 +74,54 @@ void startUp_interrupts(void){
 
 	//PIR1
 
-	PIE1 = 0b00000100; //TMR int is enabled
+	PIE1 = 0b00000001; //TMR1 overflow is enabled
 	PIE2 = 0;
 	PIE3 = 0;
 	PIE4 = 0;
 	PIE5 = 0b00000011; //RXB1IE, and RXB0IE 
 
 
-	IPR1 = 0b00000000; //TMR is low priority; 0b00000x00 where x is the bit that matters
+	IPR1 = 0b00000000; //TMR is low priority; 0b0000000x where x is the bit that matters
 	IPR2 = 0;
 	IPR3 = 0;
 	IPR4 = 0;
 	IPR5 = 0b00000011;//RXB1IE, and RXB0IE  are high priority
+
+
+	RCONbits.IPEN =1;//reset reg
+	//IPEN=enable 2 priority levels
+
 	return;
 }
 
+void startUp_timer(void){
+	//we are using timer1 overflow  
+	//each digit must have a freq  of at least 50 Hz, we have 6 digits so a min freq is 50*6=300
+	// (foce / prescaler) =  24mHz /1 = 24 Mhz
+    //(clk to over flow  = 24Mhz / 2^16 = 366.21 hz
+	T1CON = 0b01001111;
+			//TMR1CS 01
+			//T1CKS  00 (1:1) 
+			//SOSCEN 1 (I think?)
+			//T1SYNC 1  
+			//RD16   1
+			//TMR1ON 1
 
+	T1GCON = 0b000000000;
+			//tmr1ge  0
+			//t1gpol =0
+			//t1gtm 0
+			//t1gsmp 0
+			//t1ggo 0
+			//t1gcal 0
+			//t1gss 00
+
+	//24Mzh/8 = 3mHz
+	//clk to overflow = 3/2^8
+ 
+
+
+}
 void startUp_GPIO(void){
 
     //portA setup
@@ -138,6 +170,7 @@ void startUp_device(void){
 
 	startUp_interrupts();
 	startUp_OSCILLATOR();
+	startUp_timer();
 	startUp_GPIO();
 	startUp_ECAN();
 

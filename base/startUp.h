@@ -3,7 +3,8 @@
 
 void high_isr(void);
 void low_isr(void);
-void startUP_interrupts(void);
+void startUp_interrupts(void);
+void startUp_timer(void);
 void startUP_GPIO(void);
 void startUP_OSCILLATOR(void);
 void startUp_device(void);
