@@ -63,7 +63,7 @@
 *
 *********************************************************************/
 #include <p18cxxx.h>
-#include "ECAN.h"
+//#include "ECAN.h"
 #include "startUp.h"
 
 
@@ -126,7 +126,7 @@ void main(void)
     {
         //if(ButtonPressed())
         //{
-            ECAN_Transmit();
+       //     ECAN_Transmit();
         //}
         
        // if(ECAN_Receive())

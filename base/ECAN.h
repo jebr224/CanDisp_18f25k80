@@ -56,10 +56,9 @@
 * Internal FRC.
 *********************************************************************/
 
+
 #ifndef _ECAN_H
 #define _ECAN_H
-
-
 /*********************************************************************
 *
 *                             Defines 
@@ -69,15 +68,24 @@
 #define FALSE   0
 
 
+
+
+
+
 /*********************************************************************
 *
 *                        Function Prototypes 
 *
 *********************************************************************/
+
+
 void startUp_ECAN(void);
 
 unsigned char ECAN_Receive(void);
+//unsigned char ECAN_Receive( unsigned char *idHigh, unsigned char *idLow,unsigned char *len,unsigned char *data);
 
 void ECAN_Transmit(void);
+
+
 
 #endif

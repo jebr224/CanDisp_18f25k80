@@ -2,6 +2,7 @@
 #include <p18cxxx.h>
 #include "ECAN.h"
 #include "startUp.h"
+//#include "comm.h"
 
 
 
@@ -20,7 +21,7 @@ void high_isr(void){
 	//LATBbits.LATB3 ^= 1;       //Toggle portB pin 3 (red LED)
 	//parse message and update values
 	
-	newCanMessage(); //can
+//	newCanMessage(); //can
 
 	PIR5 &= 0b111111100; //clear the interrupt flag so that another interrupt can happen
 	

@@ -2,6 +2,14 @@
 #include "seg.h"
 #include <p18cxxx.h>
 
+
+unsigned char g_dispValues[6] ="12345";
+unsigned char g_currentDigit = 0;
+unsigned char g_digitMask = 0xff;
+unsigned char g_decPoint1 = 1;
+unsigned char g_decPoint2 = 1;
+
+
 void updateSeg(void){
 	 g_currentDigit++;
 	if (g_currentDigit > 6){

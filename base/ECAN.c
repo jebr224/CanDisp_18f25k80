@@ -85,8 +85,8 @@
 // ECAN bitrate define, only can choose one rate
 //#define F_ECAN_100      //100kbps
 //#define F_ECAN_125      //125kbps
-//#define F_ECAN_500      //500kbps
-#define F_ECAN_1000     //1Mbps
+#define F_ECAN_500      //500kbps
+//#define F_ECAN_1000     //1Mbps
 
 // ECAN 
 #define   F_ECANMode2_FP        CANCON&0x0F
@@ -100,16 +100,10 @@
 #define   F_ECANFIFO_7          B5CONbits.RXFUL
 
 
-/*********************************************************************
-*
-*                            Global Variables 
-*
-*********************************************************************/
-unsigned char temp_EIDH;
-unsigned char temp_EIDL;
-unsigned char temp_SIDH;
-unsigned char temp_SIDL;
-unsigned char temp_DLC;
+
+
+
+/*
 unsigned char temp_D0;
 unsigned char temp_D1;
 unsigned char temp_D2;
@@ -118,8 +112,26 @@ unsigned char temp_D4;
 unsigned char temp_D5;
 unsigned char temp_D6;
 unsigned char temp_D7;
+*/
+
+/*********************************************************************
+*
+*                            Global Variables 
+*
+*********************************************************************/
+
+//There is a neat casting track, but the bytes must be contiguous 
 
 
+
+
+
+unsigned char temp_EIDH;
+unsigned char temp_EIDL;
+unsigned char temp_SIDH;
+unsigned char temp_SIDL;
+unsigned char temp_DLC;
+unsigned char temp_data[8];
 
 
 
@@ -258,10 +270,17 @@ void startUp_ECAN(void)
 *                Check the buffers, if it have message
 *
 *********************************************************************/
-unsigned char ECAN_Receive(void)
+//unsigned char ECAN_Receive( unsigned char *idHigh, unsigned char *idLow,unsigned char *len,unsigned char *data)
+unsigned char ECAN_Receive( void )
 {
     unsigned char RXMsgFlag;
     unsigned char F_ECANFIFO[8];
+
+ //	*idHigh =  0;
+//	*idLow	= 0;
+//	*len = 0;
+	 
+
 
     RXMsgFlag = 0x00;
     
@@ -273,14 +292,14 @@ unsigned char ECAN_Receive(void)
         temp_SIDH = RXB0SIDH;
         temp_SIDL = RXB0SIDL;
         temp_DLC = RXB0DLC;
-        temp_D0 = RXB0D0;
-        temp_D1 = RXB0D1;
-        temp_D2 = RXB0D2;
-        temp_D3 = RXB0D3;
-        temp_D4 = RXB0D4;
-        temp_D5 = RXB0D5;
-        temp_D6 = RXB0D6;
-        temp_D7 = RXB0D7;
+        temp_data[0] = RXB0D0;
+        temp_data[1] = RXB0D1;
+        temp_data[2] = RXB0D2;
+        temp_data[3] = RXB0D3;
+        temp_data[4] = RXB0D4;
+        temp_data[5] = RXB0D5;
+        temp_data[6] = RXB0D6;
+        temp_data[7] = RXB0D7;
         RXB0CONbits.RXFUL = 0;
         RXMsgFlag = 0x01;
     }
@@ -291,14 +310,14 @@ unsigned char ECAN_Receive(void)
         temp_SIDH = RXB1SIDH;
         temp_SIDL = RXB1SIDL;
         temp_DLC = RXB1DLC;
-        temp_D0 = RXB1D0;
-        temp_D1 = RXB1D1;
-        temp_D2 = RXB1D2;
-        temp_D3 = RXB1D3;
-        temp_D4 = RXB1D4;
-        temp_D5 = RXB1D5;
-        temp_D6 = RXB1D6;
-        temp_D7 = RXB1D7;
+        temp_data[0] = RXB1D0;
+        temp_data[1] = RXB1D1;
+        temp_data[2] = RXB1D2;
+        temp_data[3] = RXB1D3;
+        temp_data[4] = RXB1D4;
+        temp_data[5] = RXB1D5;
+        temp_data[6] = RXB1D6;
+        temp_data[7] = RXB1D7;
         RXB1CONbits.RXFUL = 0;
         RXMsgFlag = 0x01;
     }
@@ -309,14 +328,14 @@ unsigned char ECAN_Receive(void)
         temp_SIDH = B0SIDH;
         temp_SIDL = B0SIDL;
         temp_DLC = B0DLC;
-        temp_D0 = B0D0;
-        temp_D1 = B0D1;
-        temp_D2 = B0D2;
-        temp_D3 = B0D3;
-        temp_D4 = B0D4;
-        temp_D5 = B0D5;
-        temp_D6 = B0D6;
-        temp_D7 = B0D7;
+        temp_data[0] = B0D0;
+        temp_data[1] = B0D1;
+        temp_data[2] = B0D2;
+        temp_data[3] = B0D3;
+        temp_data[4] = B0D4;
+        temp_data[5] = B0D5;
+        temp_data[6] = B0D6;
+        temp_data[7] = B0D7;
         
         B0CONbits.RXFUL = 0;
         RXMsgFlag = 0x01;
@@ -344,14 +363,14 @@ unsigned char ECAN_Receive(void)
         temp_SIDH = RXB0SIDH;
         temp_SIDL = RXB0SIDL;
         temp_DLC = RXB0DLC;
-        temp_D0 = RXB0D0;
-        temp_D1 = RXB0D1;
-        temp_D2 = RXB0D2;
-        temp_D3 = RXB0D3;
-        temp_D4 = RXB0D4;
-        temp_D5 = RXB0D5;
-        temp_D6 = RXB0D6;
-        temp_D7 = RXB0D7;
+        temp_data[0] = RXB0D0;
+        temp_data[1] = RXB0D1;
+        temp_data[2] = RXB0D2;
+        temp_data[3] = RXB0D3;
+        temp_data[4] = RXB0D4;
+        temp_data[5] = RXB0D5;
+        temp_data[6] = RXB0D6;
+        temp_data[7] = RXB0D7;
         RXB0CONbits.RXFUL = 0;
         RXMsgFlag = 0x01;
         break;
@@ -363,14 +382,14 @@ unsigned char ECAN_Receive(void)
         temp_SIDH = RXB1SIDH;
         temp_SIDL = RXB1SIDL;
         temp_DLC = RXB1DLC;
-        temp_D0 = RXB1D0;
-        temp_D1 = RXB1D1;
-        temp_D2 = RXB1D2;
-        temp_D3 = RXB1D3;
-        temp_D4 = RXB1D4;
-        temp_D5 = RXB1D5;
-        temp_D6 = RXB1D6;
-        temp_D7 = RXB1D7;
+        temp_data[0] = RXB1D0;
+        temp_data[1] = RXB1D1;
+        temp_data[2] = RXB1D2;
+        temp_data[3] = RXB1D3;
+        temp_data[4] = RXB1D4;
+        temp_data[5] = RXB1D5;
+        temp_data[6] = RXB1D6;
+        temp_data[7] = RXB1D7;
         RXB1CONbits.RXFUL = 0;
         RXMsgFlag = 0x01;
         break;
@@ -385,8 +404,17 @@ unsigned char ECAN_Receive(void)
 
     if  (RXMsgFlag == 0x01)
     {
+		int i;
         RXMsgFlag = 0x00;
         PIR5bits.RXB1IF = 0; //A CAN Receive Buffer has received a new message 
+	
+//extern, for the bold
+//		*idHigh =  temp_SIDH ;
+//		*idLow	=  temp_SIDL  ;
+//		*len = temp_DLC ;
+//		for(i=0;i<temp_DLC;i++){
+//			data[i] = temp_data[i];//deep copy
+//		}
         return TRUE;
     }
     else
