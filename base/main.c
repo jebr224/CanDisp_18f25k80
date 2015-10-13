@@ -183,7 +183,7 @@ unsigned char ButtonPressed(void)
 void Delay(unsigned int count)
 {
     // Countdown until equal to zero and then return
-    while(count--);
+    
 }    
 
 /*********************************************************************

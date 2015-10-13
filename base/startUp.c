@@ -2,6 +2,7 @@
 #include <p18cxxx.h>
 #include "ECAN.h"
 #include "startUp.h"
+#include "seg.h"
 //#include "comm.h"
 
 
@@ -21,10 +22,12 @@ void high_isr(void){
 	//LATBbits.LATB3 ^= 1;       //Toggle portB pin 3 (red LED)
 	//parse message and update values
 	
-//	newCanMessage(); //can
-
-	PIR5 &= 0b111111100; //clear the interrupt flag so that another interrupt can happen
+	//	newCanMessage(); //can
 	
+	//PIR5 &= 0b111111100; //clear the interrupt flag so that another interrupt can happen
+	updateSeg();
+	//	clearCANRX;
+	clearTM1;
 }
 #pragma code
 
@@ -45,8 +48,10 @@ void high_interrupt(void){
 void low_isr(void){
 	//LATBbits.LATB3 ^= 1;       //Toggle portB pin 3 (red LED)
 	//segUpDate
-
-	PIR1 &= 0b1111011;///clear the interrupt flag (TM0)so that another interrupt can happen
+	//	 updateSeg();
+	//PIR1 &= 0b1111011;///clear the interrupt flag (TM0)so that another interrupt can happen
+	newCanMessage(); 
+	clearTM1;
 }
 #pragma code
 
@@ -76,13 +81,12 @@ void startUp_interrupts(void){
 	INTCON2 = 0b1000100;
 	INTCON3 = 0;// no external interupts
 
-	//PIR1
 
 	PIE1 = 0b00000001; //TMR1 overflow is enabled
 	PIE2 = 0;
 	PIE3 = 0;
 	PIE4 = 0;
-	PIE5 = 0b00000011; //RXB1IE, and RXB0IE 
+	PIE5 = 0b00000000;//11; //RXB1IE, and RXB0IE 
 
 
 	IPR1 = 0b00000000; //TMR is low priority; 0b0000000x where x is the bit that matters
@@ -92,8 +96,15 @@ void startUp_interrupts(void){
 	IPR5 = 0b00000011;//RXB1IE, and RXB0IE  are high priority
 
 
-	RCONbits.IPEN =1;//reset reg
+	clearTM1;
+	clearCANRX;
+	//RCONbits.IPEN =1;//reset reg
 	//IPEN=enable 2 priority levels
+	RCON =0b10000000;//danger
+
+	PADCFG1bits.CTMUDS=0;
+	CM1CON =0;
+	CM2CON =0;
 
 	return;
 }
@@ -103,9 +114,9 @@ void startUp_timer(void){
 	//each digit must have a freq  of at least 50 Hz, we have 6 digits so a min freq is 50*6=300
 	// (foce / prescaler) =  24mHz /1 = 24 Mhz
     //(clk to over flow  = 24Mhz / 2^16 = 366.21 hz
-	T1CON = 0b01011111;
+	T1CON = 0b01111111;
 			//TMR1CS 01
-			//T1CKS  01 (1:2) 
+			//T1CKS  11 (1:8)// 10 (1:4)//01 (1:2) 
 			//SOSCEN 1 (I think?)
 			//T1SYNC 1  
 			//RD16   1
@@ -141,8 +152,11 @@ void startUp_GPIO(void){
 		ODCON  = 0; //Open-drain capability is disabled 
 
 	//portC setup
+		ODCON =0;
 		TRISC = 0; //Set all port C pins to output
 		LATC  = 0; //Set output low
+
+	
 
 	return;
 }
@@ -186,12 +200,22 @@ void startUp_OSCILLATOR(void){
 
 
 void startUp_device(void){
+	unsigned char segDigi[6];
+	segDigi[0] = 0;
+	segDigi[1] = 1;
+	segDigi[2] = 2;
+	segDigi[3] = 3;
+	segDigi[4] = 4;
+	segDigi[5] = 5;
 
 	startUp_interrupts();
 	startUp_OSCILLATOR();
 	startUp_timer();
 	startUp_GPIO();
 	startUp_ECAN();
+
+
+	setSegValues(segDigi);
 	interrupts_on;
 	return;
 

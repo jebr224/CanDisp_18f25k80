@@ -33,13 +33,13 @@ RB0  2
 RB1  22
 RB4  25
 RB5  26
+RC0  11  
 
 misc
 ------------------------------------
-RC0  11  (Decimal point)
 RC1  12  (negative sign)
 RC2  13  (status light)
-RE3  1   (speaker?)
+RE3  1   (Decimal point)   (speaker?)
 
 CAN  
 ------------------------------------
