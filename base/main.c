@@ -63,7 +63,7 @@
 *
 *********************************************************************/
 #include <p18cxxx.h>
-//#include "ECAN.h"
+#include "ECAN.h"
 #include "startUp.h"
 
 
@@ -124,9 +124,10 @@ void main(void)
 	startUp_device();//startup.c
     while(1)
     {
+		int i;
         //if(ButtonPressed())
         //{
-       //     ECAN_Transmit();
+            ECAN_Transmit();
         //}
         
        // if(ECAN_Receive())
@@ -137,7 +138,9 @@ void main(void)
         //Heartbeat();
         
         // Delay for one millisecond to debounce pushbutton
-        Delay(ONE_MS);
+        for (i=0;i<1000;i++){
+			Delay(ONE_MS);
+		}
     }
 }
 

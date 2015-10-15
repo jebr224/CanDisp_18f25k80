@@ -79,7 +79,7 @@
 //#define F_ECAN_Mode2      //ECAN mode 2
 
 //ECAN RxFilter15 as Mask or not, 3 Masks could work at the same time
-#define F_ECAN_Mask01
+//#define F_ECAN_Mask01
 //#define F_ECAN_RxF15Mask
 
 // ECAN bitrate define, only can choose one rate
@@ -211,7 +211,7 @@ void startUp_ECAN(void)
 
     // Enable Filters
     // 0,1 Filter
-    RXFCON0 = 0x03;     // 
+    RXFCON0 = 0x00;//3;     // 
     RXFCON1 = 0x00;     //Disable all
     
     // Assign Filters to Masks
@@ -439,7 +439,7 @@ void ECAN_Transmit(void)
     TXB0SIDH = 0x6B;
     TXB0SIDL = 0xC0;
 
-    TXB0DLC = 0x03;
+    TXB0DLC = 0;\\; 0x03;
     TXB0D0 = 0xAA;
     TXB0D1 = 0xCC;
     TXB0D2 = 0x55;

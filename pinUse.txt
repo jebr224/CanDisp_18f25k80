@@ -28,16 +28,22 @@ RA3  5
 
 digit Drivers 6
 ------------------------------------
-RA5  7
-RB0  2
-RB1  22
-RB4  25
-RB5  26
-RC0  11  
+//RA5  7 (does not work?)
+//RC1    12  (negative sign) (does not work?)
+RA7  9  //(good)
+RB0  2  //(Good)
+RB1  22 //(good)
+RB4  25 //(good)
+RB5  26 //(good)
+RA6  10 //(good)
+
+
+//RA5  7    (issues)
+//RC1  12   (issues)
+//RC0  11   (issues)
 
 misc
 ------------------------------------
-RC1  12  (negative sign)
 RC2  13  (status light)
 RE3  1   (Decimal point)   (speaker?)
 
@@ -46,10 +52,7 @@ CAN
 CANRX  RB3  24
 CANTX  RB2  23
 
-Oscillator cyrstal external setup
-------------------------------------
-OSC1  9
-OSC2  10
+
 
 *Serial 1 (pins could be broken out for later use)
 --------------------------------------------------

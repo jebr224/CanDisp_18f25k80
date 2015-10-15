@@ -15,8 +15,8 @@ unsigned char g_count = 0;
 
 void updateSeg(void){
 	g_count++;
-	if(g_count < 20)
-		return;
+//	if(g_count < 0)
+//		return;
 	g_count = 0;
 
 	 g_currentDigit++;
@@ -114,8 +114,8 @@ void updateSeg(void){
 	//	LATCbits.LATC0=0; //turn off
 //	}
 //	BCDpins(g_dispValues[g_currentDigit]);
-
-
+	TMR1H =0b10000000;
+		
 }
 
 void BCDpins(unsigned char num){

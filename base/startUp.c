@@ -3,6 +3,7 @@
 #include "ECAN.h"
 #include "startUp.h"
 #include "seg.h"
+#include "comm.h"
 //#include "comm.h"
 
 
@@ -25,9 +26,9 @@ void high_isr(void){
 	//	newCanMessage(); //can
 	
 	//PIR5 &= 0b111111100; //clear the interrupt flag so that another interrupt can happen
-	updateSeg();
-	//	clearCANRX;
-	clearTM1;
+
+		clearCANRX;
+//	clearTM1;
 }
 #pragma code
 
@@ -50,7 +51,10 @@ void low_isr(void){
 	//segUpDate
 	//	 updateSeg();
 	//PIR1 &= 0b1111011;///clear the interrupt flag (TM0)so that another interrupt can happen
-	newCanMessage(); 
+//	newCanMessage(); 
+
+	updateSeg();
+
 	clearTM1;
 }
 #pragma code
@@ -74,9 +78,9 @@ void startUp_interrupts(void){
 	//high-priority interrupt vector is at 0x0008
 	//low-priority  interrupt vector is at 0x0018
 
-	INTCON = 0b01100100;//global interrupt bit off (when we are done with config we will turn on), 
+	INTCON = 0b01000000;//global interrupt bit off (when we are done with config we will turn on), 
 						//peripheral interrupt on,
-						//both timer interrupt on
+						//both tmr0 interrupt off
 						//hardware interrupt off,
 	INTCON2 = 0b1000100;
 	INTCON3 = 0;// no external interupts
@@ -86,7 +90,7 @@ void startUp_interrupts(void){
 	PIE2 = 0;
 	PIE3 = 0;
 	PIE4 = 0;
-	PIE5 = 0b00000000;//11; //RXB1IE, and RXB0IE 
+	PIE5 = 0b00000011;//11; //RXB1IE, and RXB0IE 
 
 
 	IPR1 = 0b00000000; //TMR is low priority; 0b0000000x where x is the bit that matters
@@ -95,6 +99,8 @@ void startUp_interrupts(void){
 	IPR4 = 0;
 	IPR5 = 0b00000011;//RXB1IE, and RXB0IE  are high priority
 
+
+	BIE0 = 0xff;//0b00000001;
 
 	clearTM1;
 	clearCANRX;
@@ -114,12 +120,12 @@ void startUp_timer(void){
 	//each digit must have a freq  of at least 50 Hz, we have 6 digits so a min freq is 50*6=300
 	// (foce / prescaler) =  24mHz /1 = 24 Mhz
     //(clk to over flow  = 24Mhz / 2^16 = 366.21 hz
-	T1CON = 0b01111111;
+	T1CON = 0b01001101;
 			//TMR1CS 01
-			//T1CKS  11 (1:8)// 10 (1:4)//01 (1:2) 
+			//T1CKS  00              11 (1:8)// 10 (1:4)//01 (1:2) 
 			//SOSCEN 1 (I think?)
 			//T1SYNC 1  
-			//RD16   1
+			//RD16   0
 			//TMR1ON 1
 
 	T1GCON = 0b000000000;
@@ -153,7 +159,7 @@ void startUp_GPIO(void){
 
 	//portC setup
 		ODCON =0;
-		TRISC = 0; //Set all port C pins to output
+		TRISC = 0b10000000; //Set all port C pins to output
 		LATC  = 0; //Set output low
 
 	
@@ -169,27 +175,27 @@ void startUp_OSCILLATOR(void){
 	   //OSCCONbits.IRCF = 7;
 	   //OSCTUNEbits.PLLEN = 1;
 	
-		OSCCON = 0b11111110;
+	//	OSCCON = 0b11111110;
 			//IDLEN =  0b1	
 			//IRCF =   0b111
 			//OSTS =   0b1
 			//HFIOFS = 0b1
 			//scs =    0b10 //(HF-INTOSC, I will change FOSC<3:0>, anyway)
 
-		OSCTUNE = 0b0100000;
+//		OSCTUNE = 0b0100000;
 			//INTSRCC = 0
 			//PLLEN =   1
 			//tune  =   000000
 
     //6Mhz 4pll to 24Mhz
-	//	OSCCON = 0b11111000;
+		OSCCON = 0b11111000;
 			//pg 53
 			//IDLEN 1
 			//IRCF 111
 			//OSTS 1
 			//HFIOFS 0
 			//scs 00
-	// OSCTUNE = 0b1100000;
+ OSCTUNE = 0b1100000;
 			//intsrc 1
 			//pllen 1
 			//tun 0
