@@ -1,0 +1,78 @@
+
+
+DC-DC
+
+-voltage
+	-PIC18f25K80	volts (1.8 to 5.5)
+	-MCP2551		volts (4.5 to 5.5)
+	-CD4511			votls (2   to 6)
+	
+	intersection of ranges volts (4.5 to 5.5)
+	
+-current
+	reading 62 mA on breadboard
+	
+	-PIC18F25K80 mA(8 to 12)
+	-MCP2551 mA (10 rx to 75 tx)
+	-CD4511  	-qt * (volts - Vdrop) / resistance
+				7*(5- (2.0 to 2.6)) / 330 
+				50 to 64 mA
+				
+	-worst case
+		12 + 75 + 64 = 151 mA
+		
+-ripple voltage
+	-(1% to 2.5%) of vdd 
+	-mV(50 to 125)
+	
+
+-spec definition
+		-Vout		5 		Volts
+		-current	0.151 	Amps
+		-Vripple	0.100 	volts
+		-Vin(min)	10		volts
+		-Vin(max)	28		volts
+		
+		
+-Selection
+
+	-MC34063		$0.58
+		ton/toff	=(Vout + Vf)/(Vin(min) - Vsat - Vout)
+					=(5 + .7) / (10 - 1 - 5) 
+					= 1.425
+
+		ton + toff  =1/fmin
+					=1/10k
+					
+		Ct 			=4.5*10^-6 * ton
+					=4.5*10^-6 * (1/10k) (1.425)
+					=6.4125*10^-10
+
+		Ipk			=2Iout(max)
+					=2 * 0.151
+					=0.302
+		
+		RSC			=0.3/IPK(switch)
+					=0.3/0.302
+					=0.993
+					
+		Co			=(Ipk*(ton+toff))/(8 Vripple)
+					=0.302*(1/10000)/(8 * 0.10)
+					=0.00003775
+					
+		L(min)		=(Vin(min)-Vsat-Vout)/Ipk * ton(min)
+					=(10-1-5)/(0.302)*
+					
+					
+					Ct=2298 pF
+					Ipk=600 mA
+					Rsc=0.5 Ohm
+					Lmin=383 uH
+					Co=75 uF
+					R1=1k R2=3k (5V)
+					
+					
+					
+		
+					
+	LM 2576-5V  $2.10 

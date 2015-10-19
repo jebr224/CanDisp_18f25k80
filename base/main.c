@@ -138,7 +138,8 @@ void main(void)
         //Heartbeat();
         
         // Delay for one millisecond to debounce pushbutton
-        for (i=0;i<1000;i++){
+        for (i=0;i<100;i++){
+
 			Delay(ONE_MS);
 		}
     }

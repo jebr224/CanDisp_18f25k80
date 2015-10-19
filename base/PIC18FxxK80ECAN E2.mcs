@@ -13,7 +13,7 @@ SOLK=<src>|main.c|ECAN.c|startUp.c|seg.c|comm.c||<obj>||<lib>||<lkr>||
 SuiteArgsString=
 ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
 TraceCmdString=
-DebugOptions=-D__DEBUG -D__MPLAB_DEBUGGER_REAL_ICE=1
+DebugOptions=-D__DEBUG -D__MPLAB_DEBUGGER_PK3=1
 [File001]
 Location=C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\ECAN.o
 Folder=Intermediary
@@ -26,7 +26,7 @@ SOLK=<src>|main.c|ECAN.c|startUp.c|seg.c|comm.c||<obj>||<lib>||<lkr>||
 SuiteArgsString=
 ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
 TraceCmdString=
-DebugOptions=-D__DEBUG -D__MPLAB_DEBUGGER_REAL_ICE=1
+DebugOptions=-D__DEBUG -D__MPLAB_DEBUGGER_PK3=1
 [File002]
 Location=C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.o
 Folder=Intermediary
@@ -39,7 +39,7 @@ SOLK=<src>|main.c|ECAN.c|startUp.c|seg.c|comm.c||<obj>||<lib>||<lkr>||
 SuiteArgsString=
 ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
 TraceCmdString=
-DebugOptions=-D__DEBUG -D__MPLAB_DEBUGGER_REAL_ICE=1
+DebugOptions=-D__DEBUG -D__MPLAB_DEBUGGER_PK3=1
 [File003]
 Location=C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\seg.o
 Folder=Intermediary
@@ -52,7 +52,7 @@ SOLK=<src>|main.c|ECAN.c|startUp.c|seg.c|comm.c||<obj>||<lib>||<lkr>||
 SuiteArgsString=
 ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
 TraceCmdString=
-DebugOptions=-D__DEBUG -D__MPLAB_DEBUGGER_REAL_ICE=1
+DebugOptions=-D__DEBUG -D__MPLAB_DEBUGGER_PK3=1
 [File004]
 Location=C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\comm.o
 Folder=Intermediary
@@ -65,7 +65,7 @@ SOLK=<src>|main.c|ECAN.c|startUp.c|seg.c|comm.c||<obj>||<lib>||<lkr>||
 SuiteArgsString=
 ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
 TraceCmdString=
-DebugOptions=-D__DEBUG -D__MPLAB_DEBUGGER_REAL_ICE=1
+DebugOptions=-D__DEBUG -D__MPLAB_DEBUGGER_PK3=1
 [File005]
 Location=C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\PIC18FxxK80ECAN E2.cof
 Folder=Output
@@ -78,7 +78,7 @@ SOLK=<src>|main.c|ECAN.c|startUp.c|seg.c|comm.c||<obj>||<lib>||<lkr>||
 SuiteArgsString=
 ToolArgsString=/o"$(BINDIR_)$(TARGETBASE).cof" /M"$(BINDIR_)$(TARGETBASE).map" /W
 TraceCmdString=
-DebugOptions=/z__MPLAB_DEBUG=1 /z__MPLAB_DEBUGGER_REAL_ICE=1 /z__ICD2RAM=1
+DebugOptions=/z__MPLAB_DEBUG=1 /z__MPLAB_DEBUGGER_PK3=1 /z__ICD2RAM=1
 [File006]
 Location=C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\PIC18FxxK80ECAN E2.hex
 Folder=Output
@@ -91,7 +91,7 @@ SOLK=<src>|main.c|ECAN.c|startUp.c|seg.c|comm.c||<obj>||<lib>||<lkr>||
 SuiteArgsString=
 ToolArgsString=/o"$(BINDIR_)$(TARGETBASE).cof" /M"$(BINDIR_)$(TARGETBASE).map" /W
 TraceCmdString=
-DebugOptions=/z__MPLAB_DEBUG=1 /z__MPLAB_DEBUGGER_REAL_ICE=1 /z__ICD2RAM=1
+DebugOptions=/z__MPLAB_DEBUG=1 /z__MPLAB_DEBUGGER_PK3=1 /z__ICD2RAM=1
 [TOOL_LOC_STAMPS]
 tool_loc{96C98149-AA1B-4CF9-B967-FAE79CAB663C}=C:\Program Files (x86)\Microchip\mplabc18\v3.47\bin\mplink.exe
 tool_loc{E56A1C86-9D32-4DF6-8C34-FE0388B1B644}=C:\Program Files (x86)\Microchip\mplabc18\v3.47\bin\mcc18.exe

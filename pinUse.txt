@@ -49,9 +49,8 @@ RE3  1   (Decimal point)   (speaker?)
 
 CAN  
 ------------------------------------
-CANRX  RB3  24
-CANTX  RB2  23
-
+CANRX  RB3  24 //(good)
+CANTX  RB2  23 //(good)
 
 
 *Serial 1 (pins could be broken out for later use)
