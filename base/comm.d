@@ -1,0 +1,1 @@
+ comm.d  comm.p1:  comm.c ws22.def comm.h ECAN.h seg.h

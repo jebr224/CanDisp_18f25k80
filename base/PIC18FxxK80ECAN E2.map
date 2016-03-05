@@ -1,5 +1,5 @@
 MPLINK 5.00, LINKER
-Linker Map File - Created Thu Oct 15 00:26:22 2015
+Linker Map File - Created Sat Feb 20 19:44:25 2016
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
@@ -26,16 +26,16 @@ Linker Map File - Created Thu Oct 15 00:26:22 2015
             .code_c018i.o       code   0x000012    program   0x000000
                low_vector       code   0x000018    program   0x000006
                    .cinit    romdata   0x00001e    program   0x00000e
-              .code_seg.o       code   0x00002c    program   0x000378
-             .code_comm.o       code   0x0003a4    program   0x00023c
-             .code_ECAN.o       code   0x0005e0    program   0x00019e
-          .code_startUp.o       code   0x00077e    program   0x000184
-                     PROG       code   0x000902    program   0x0000ba
-             .code_main.o       code   0x0009bc    program   0x0000ba
-               _cinit_scn       code   0x000a76    program   0x00009e
-         .code_fxd1616u.o       code   0x000b14    program   0x00002c
-                    .code       code   0x000b40    program   0x000020
-             _startup_scn       code   0x000b60    program   0x00001c
+              .code_seg.o       code   0x00002c    program   0x000384
+             .code_comm.o       code   0x0003b0    program   0x00023c
+             .code_ECAN.o       code   0x0005ec    program   0x00019e
+          .code_startUp.o       code   0x00078a    program   0x000192
+                     PROG       code   0x00091c    program   0x0000ba
+             .code_main.o       code   0x0009d6    program   0x0000ba
+               _cinit_scn       code   0x000a90    program   0x00009e
+         .code_fxd1616u.o       code   0x000b2e    program   0x00002c
+                    .code       code   0x000b5a    program   0x000020
+             _startup_scn       code   0x000b7a    program   0x00001c
     .config_300000_main.o    romdata   0x300000    program   0x000001
                 MATH_DATA      udata   0x000000       data   0x000014
                  .tmpdata      udata   0x000014       data   0x000005
@@ -67,80 +67,80 @@ Linker Map File - Created Thu Oct 15 00:26:22 2015
                                Start         End      
                            ---------   ---------      
                             0x000000    0x000010      
-                            0x000018    0x000b7b      
+                            0x000018    0x000b95      
                             0x300000    0x300000      
-            2934 out of 33816 program addresses used, program memory utilization is 8%
+            2960 out of 33816 program addresses used, program memory utilization is 8%
 
 
 
                               Symbols - Sorted by Name
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-                  BCDpins   0x0000c6    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\seg.c
-            ButtonPressed   0x000a18    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\main.c
-                    Delay   0x000a4a    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\main.c
-             ECAN_Receive   0x00065a    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\ECAN.c
-            ECAN_Transmit   0x000754    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\ECAN.c
-                 FXD1616U   0x000b14    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616u.c
-                Heartbeat   0x000a5a    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\main.c
-                  INT3216   0x000902    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-              __FpUnPackA   0x000960    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-              __FpUnPackB   0x000990    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                  BCDpins   0x0000d2    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\seg.c
+            ButtonPressed   0x000a32    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\main.c
+                    Delay   0x000a64    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\main.c
+             ECAN_Receive   0x000666    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\ECAN.c
+            ECAN_Transmit   0x000760    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\ECAN.c
+                 FXD1616U   0x000b2e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616u.c
+                Heartbeat   0x000a74    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\main.c
+                  INT3216   0x00091c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+              __FpUnPackA   0x00097a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+              __FpUnPackB   0x0009aa    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
        ___return_lbl00000   0x000004    program     static                          
-       ___return_lbl00000   0x000b3e    program     static                          
-       ___return_lbl00001   0x000b7a    program     static                          
+       ___return_lbl00000   0x000b58    program     static                          
+       ___return_lbl00001   0x000b94    program     static                          
        ___return_lbl00001   0x00000c    program     static                          
-       ___return_lbl00002   0x000b12    program     static                          
+       ___return_lbl00002   0x000b2c    program     static                          
        ___return_lbl00003   0x00001c    program     static                          
-               __config_0   0x300000    program     static C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\main.c
+               __config_0   0x300000    program     static C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\main.c
                    __init   0x000006    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
-            __zero_memory   0x000b40    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
-                _do_cinit   0x000a76    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+            __zero_memory   0x000b5a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
+                _do_cinit   0x000a90    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                    _entry   0x000000    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                 _startup   0x000b60    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                compare_l   0x000b56    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
-                copy_loop   0x000ae8    program     static                          
-            copy_one_byte   0x000aee    program     static                          
-                     done   0x000b12    program     static                          
-             done_copying   0x000afc    program     static                          
-                  endloop   0x000b3a    program     static                          
-           high_interrupt   0x000008    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
-                 high_isr   0x00077e    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
-                    jExit   0x00095e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                    jLoop   0x00093e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                jLoopExit   0x00094e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                     jMax   0x000912    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                  jMaxNeg   0x000920    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                  jMaxPos   0x000916    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                  jNotInf   0x00092e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                  jUnpkA1   0x00096a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                  jUnpkA2   0x000982    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                 jUnpkANZ   0x000978    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                  jUnpkB1   0x00099a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                  jUnpkB2   0x0009b2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                 jUnpkBNZ   0x0009a8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                 jUnpkNaN   0x00098c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                    jZero   0x000928    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                     loop   0x000b1e    program     static                          
-                     loop   0x000b70    program     static                          
-                   loop_h   0x000b4e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
-                   loop_l   0x000b58    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
-            low_interrupt   0x000018    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
-                  low_isr   0x000794    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
-                     main   0x0009bc    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\main.c
-            newCanMessage   0x0003a4    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\comm.c
-       setFrist3SegValues   0x0001e0    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\seg.c
-       setSecondSegValues   0x0002c0    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\seg.c
-             setSegValues   0x000100    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\seg.c
-             startUp_ECAN   0x0005e0    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\ECAN.c
-             startUp_GPIO   0x000870    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
-       startUp_OSCILLATOR   0x00088e    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
-           startUp_device   0x00089a    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
-       startUp_interrupts   0x00082c    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
-            startUp_timer   0x000868    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
-                     test   0x000a90    program     static                          
-                updateSeg   0x00002c    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\seg.c
-               zero_block   0x000b4e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
+                 _startup   0x000b7a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                compare_l   0x000b70    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
+                copy_loop   0x000b02    program     static                          
+            copy_one_byte   0x000b08    program     static                          
+                     done   0x000b2c    program     static                          
+             done_copying   0x000b16    program     static                          
+                  endloop   0x000b54    program     static                          
+           high_interrupt   0x000008    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
+                 high_isr   0x00078a    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
+                    jExit   0x000978    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                    jLoop   0x000958    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                jLoopExit   0x000968    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                     jMax   0x00092c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                  jMaxNeg   0x00093a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                  jMaxPos   0x000930    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                  jNotInf   0x000948    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                  jUnpkA1   0x000984    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                  jUnpkA2   0x00099c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                 jUnpkANZ   0x000992    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                  jUnpkB1   0x0009b4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                  jUnpkB2   0x0009cc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                 jUnpkBNZ   0x0009c2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                 jUnpkNaN   0x0009a6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                    jZero   0x000942    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                     loop   0x000b38    program     static                          
+                     loop   0x000b8a    program     static                          
+                   loop_h   0x000b68    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
+                   loop_l   0x000b72    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
+            low_interrupt   0x000018    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
+                  low_isr   0x0007a0    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
+                     main   0x0009d6    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\main.c
+            newCanMessage   0x0003b0    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\comm.c
+       setFrist3SegValues   0x0001ec    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\seg.c
+       setSecondSegValues   0x0002cc    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\seg.c
+             setSegValues   0x00010c    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\seg.c
+             startUp_ECAN   0x0005ec    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\ECAN.c
+             startUp_GPIO   0x00087c    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
+       startUp_OSCILLATOR   0x00089c    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
+           startUp_device   0x0008aa    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
+       startUp_interrupts   0x000838    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
+            startUp_timer   0x000874    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
+                     test   0x000aaa    program     static                          
+                updateSeg   0x00002c    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\seg.c
+               zero_block   0x000b68    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
                    ADCON0   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
                ADCON0bits   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
                    ADCON1   0x000fc1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
@@ -994,26 +994,26 @@ Linker Map File - Created Thu Oct 15 00:26:22 2015
                  __TEMPB1   0x000012       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\temparg.asm
                  __TEMPB2   0x000011       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\temparg.asm
                  __TEMPB3   0x000010       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\temparg.asm
-                  __tmp_0   0x000014       data     static C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\comm.c
-                  __tmp_0   0x000014       data     static C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\seg.c
-                  __tmp_0   0x000014       data     static C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\main.c
-                  __tmp_0   0x000014       data     static C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\ECAN.c
-         buttonWasPressed   0x000e1f       data     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\main.c
+                  __tmp_0   0x000014       data     static C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\comm.c
+                  __tmp_0   0x000014       data     static C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\seg.c
+                  __tmp_0   0x000014       data     static C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\main.c
+                  __tmp_0   0x000014       data     static C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\ECAN.c
+         buttonWasPressed   0x000e1f       data     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\main.c
                 curr_byte   0x000e10       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                curr_entry   0x000e12       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                  data_ptr   0x000e14       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                  g_count   0x000e22       data     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\seg.c
-           g_currentDigit   0x000e20       data     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\seg.c
-              g_digitMask   0x000e21       data     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\seg.c
-             g_dispValues   0x000e17       data     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\seg.c
-           heartbeatCount   0x000e1d       data     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\main.c
+                  g_count   0x000e22       data     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\seg.c
+           g_currentDigit   0x000e20       data     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\seg.c
+              g_digitMask   0x000e21       data     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\seg.c
+             g_dispValues   0x000e17       data     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\seg.c
+           heartbeatCount   0x000e1d       data     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\main.c
                      prom   0x000e0d       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                 temp_DLC   0x000e04       data     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\ECAN.c
-                temp_EIDH   0x000e00       data     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\ECAN.c
-                temp_EIDL   0x000e01       data     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\ECAN.c
-                temp_SIDH   0x000e02       data     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\ECAN.c
-                temp_SIDL   0x000e03       data     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\ECAN.c
-                temp_data   0x000e05       data     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\ECAN.c
+                 temp_DLC   0x000e04       data     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\ECAN.c
+                temp_EIDH   0x000e00       data     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\ECAN.c
+                temp_EIDL   0x000e01       data     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\ECAN.c
+                temp_SIDH   0x000e02       data     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\ECAN.c
+                temp_SIDL   0x000e03       data     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\ECAN.c
+                temp_data   0x000e05       data     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\ECAN.c
 
 
 
@@ -1023,68 +1023,68 @@ Linker Map File - Created Thu Oct 15 00:26:22 2015
                    _entry   0x000000    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
        ___return_lbl00000   0x000004    program     static                          
                    __init   0x000006    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
-           high_interrupt   0x000008    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
+           high_interrupt   0x000008    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
        ___return_lbl00001   0x00000c    program     static                          
-            low_interrupt   0x000018    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
+            low_interrupt   0x000018    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
        ___return_lbl00003   0x00001c    program     static                          
-                updateSeg   0x00002c    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\seg.c
-                  BCDpins   0x0000c6    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\seg.c
-             setSegValues   0x000100    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\seg.c
-       setFrist3SegValues   0x0001e0    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\seg.c
-       setSecondSegValues   0x0002c0    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\seg.c
-            newCanMessage   0x0003a4    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\comm.c
-             startUp_ECAN   0x0005e0    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\ECAN.c
-             ECAN_Receive   0x00065a    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\ECAN.c
-            ECAN_Transmit   0x000754    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\ECAN.c
-                 high_isr   0x00077e    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
-                  low_isr   0x000794    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
-       startUp_interrupts   0x00082c    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
-            startUp_timer   0x000868    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
-             startUp_GPIO   0x000870    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
-       startUp_OSCILLATOR   0x00088e    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
-           startUp_device   0x00089a    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\startUp.c
-                  INT3216   0x000902    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                     jMax   0x000912    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                  jMaxPos   0x000916    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                  jMaxNeg   0x000920    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                    jZero   0x000928    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                  jNotInf   0x00092e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                    jLoop   0x00093e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                jLoopExit   0x00094e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                    jExit   0x00095e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-              __FpUnPackA   0x000960    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                  jUnpkA1   0x00096a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                 jUnpkANZ   0x000978    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                  jUnpkA2   0x000982    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                 jUnpkNaN   0x00098c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-              __FpUnPackB   0x000990    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                  jUnpkB1   0x00099a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                 jUnpkBNZ   0x0009a8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                  jUnpkB2   0x0009b2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                     main   0x0009bc    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\main.c
-            ButtonPressed   0x000a18    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\main.c
-                    Delay   0x000a4a    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\main.c
-                Heartbeat   0x000a5a    program     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\main.c
-                _do_cinit   0x000a76    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     test   0x000a90    program     static                          
-                copy_loop   0x000ae8    program     static                          
-            copy_one_byte   0x000aee    program     static                          
-             done_copying   0x000afc    program     static                          
-                     done   0x000b12    program     static                          
-       ___return_lbl00002   0x000b12    program     static                          
-                 FXD1616U   0x000b14    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616u.c
-                     loop   0x000b1e    program     static                          
-                  endloop   0x000b3a    program     static                          
-       ___return_lbl00000   0x000b3e    program     static                          
-            __zero_memory   0x000b40    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
-               zero_block   0x000b4e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
-                   loop_h   0x000b4e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
-                compare_l   0x000b56    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
-                   loop_l   0x000b58    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
-                 _startup   0x000b60    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     loop   0x000b70    program     static                          
-       ___return_lbl00001   0x000b7a    program     static                          
-               __config_0   0x300000    program     static C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\main.c
+                updateSeg   0x00002c    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\seg.c
+                  BCDpins   0x0000d2    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\seg.c
+             setSegValues   0x00010c    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\seg.c
+       setFrist3SegValues   0x0001ec    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\seg.c
+       setSecondSegValues   0x0002cc    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\seg.c
+            newCanMessage   0x0003b0    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\comm.c
+             startUp_ECAN   0x0005ec    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\ECAN.c
+             ECAN_Receive   0x000666    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\ECAN.c
+            ECAN_Transmit   0x000760    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\ECAN.c
+                 high_isr   0x00078a    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
+                  low_isr   0x0007a0    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
+       startUp_interrupts   0x000838    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
+            startUp_timer   0x000874    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
+             startUp_GPIO   0x00087c    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
+       startUp_OSCILLATOR   0x00089c    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
+           startUp_device   0x0008aa    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
+                  INT3216   0x00091c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                     jMax   0x00092c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                  jMaxPos   0x000930    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                  jMaxNeg   0x00093a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                    jZero   0x000942    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                  jNotInf   0x000948    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                    jLoop   0x000958    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                jLoopExit   0x000968    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                    jExit   0x000978    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+              __FpUnPackA   0x00097a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                  jUnpkA1   0x000984    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                 jUnpkANZ   0x000992    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                  jUnpkA2   0x00099c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                 jUnpkNaN   0x0009a6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+              __FpUnPackB   0x0009aa    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                  jUnpkB1   0x0009b4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                 jUnpkBNZ   0x0009c2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                  jUnpkB2   0x0009cc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                     main   0x0009d6    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\main.c
+            ButtonPressed   0x000a32    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\main.c
+                    Delay   0x000a64    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\main.c
+                Heartbeat   0x000a74    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\main.c
+                _do_cinit   0x000a90    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     test   0x000aaa    program     static                          
+                copy_loop   0x000b02    program     static                          
+            copy_one_byte   0x000b08    program     static                          
+             done_copying   0x000b16    program     static                          
+                     done   0x000b2c    program     static                          
+       ___return_lbl00002   0x000b2c    program     static                          
+                 FXD1616U   0x000b2e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616u.c
+                     loop   0x000b38    program     static                          
+                  endloop   0x000b54    program     static                          
+       ___return_lbl00000   0x000b58    program     static                          
+            __zero_memory   0x000b5a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
+               zero_block   0x000b68    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
+                   loop_h   0x000b68    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
+                compare_l   0x000b70    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
+                   loop_l   0x000b72    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
+                 _startup   0x000b7a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     loop   0x000b8a    program     static                          
+       ___return_lbl00001   0x000b94    program     static                          
+               __config_0   0x300000    program     static C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\main.c
                   __REMB3   0x000000       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\aarg.asm
                  __AARGB7   0x000000       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\aarg.asm
                   __REMB2   0x000001       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\aarg.asm
@@ -1111,26 +1111,26 @@ Linker Map File - Created Thu Oct 15 00:26:22 2015
                  __TEMPB1   0x000012       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\temparg.asm
                    __TEMP   0x000013       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\temparg.asm
                  __TEMPB0   0x000013       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\temparg.asm
-                  __tmp_0   0x000014       data     static C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\comm.c
-                  __tmp_0   0x000014       data     static C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\seg.c
-                  __tmp_0   0x000014       data     static C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\main.c
-                  __tmp_0   0x000014       data     static C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\ECAN.c
-                temp_EIDH   0x000e00       data     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\ECAN.c
-                temp_EIDL   0x000e01       data     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\ECAN.c
-                temp_SIDH   0x000e02       data     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\ECAN.c
-                temp_SIDL   0x000e03       data     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\ECAN.c
-                 temp_DLC   0x000e04       data     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\ECAN.c
-                temp_data   0x000e05       data     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\ECAN.c
+                  __tmp_0   0x000014       data     static C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\comm.c
+                  __tmp_0   0x000014       data     static C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\seg.c
+                  __tmp_0   0x000014       data     static C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\main.c
+                  __tmp_0   0x000014       data     static C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\ECAN.c
+                temp_EIDH   0x000e00       data     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\ECAN.c
+                temp_EIDL   0x000e01       data     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\ECAN.c
+                temp_SIDH   0x000e02       data     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\ECAN.c
+                temp_SIDL   0x000e03       data     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\ECAN.c
+                 temp_DLC   0x000e04       data     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\ECAN.c
+                temp_data   0x000e05       data     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\ECAN.c
                      prom   0x000e0d       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                 curr_byte   0x000e10       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                curr_entry   0x000e12       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                  data_ptr   0x000e14       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-             g_dispValues   0x000e17       data     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\seg.c
-           heartbeatCount   0x000e1d       data     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\main.c
-         buttonWasPressed   0x000e1f       data     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\main.c
-           g_currentDigit   0x000e20       data     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\seg.c
-              g_digitMask   0x000e21       data     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\seg.c
-                  g_count   0x000e22       data     extern C:\Users\JohnDeskTop\workShop\canDisp\25k80\CanDisp_18f25k80\base\seg.c
+             g_dispValues   0x000e17       data     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\seg.c
+           heartbeatCount   0x000e1d       data     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\main.c
+         buttonWasPressed   0x000e1f       data     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\main.c
+           g_currentDigit   0x000e20       data     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\seg.c
+              g_digitMask   0x000e21       data     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\seg.c
+                  g_count   0x000e22       data     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\seg.c
              RXERRCNTbits   0x000e41       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
                  RXERRCNT   0x000e41       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
                  TXERRCNT   0x000e42       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm

@@ -151,11 +151,12 @@ void startUp_GPIO(void){
 		ANCON0 = 0; //set pins to digital mode
 	
    //portB setup
-		TRISB  = 0; //Set all port B pins to output
-		LATB   = 0; //Set output low
+		TRISB  = 0b00001000; //Set all port B pins to output//RB3 - CANRX
+		LATB   = 0; //Set output low 
 		ANCON0 = 0; //I think I need this
 		ANCON1 = 0; //set it all to digital
-		ODCON  = 0; //Open-drain capability is disabled 
+		ODCON  = 0; //Open-drain capability is disabled
+ 
 
 	//portC setup
 		ODCON =0;
@@ -172,30 +173,32 @@ void startUp_GPIO(void){
 void startUp_OSCILLATOR(void){
 		// Set the internal oscillator to 64MHz
 		//(I don't config using the structs below)
-	   //OSCCONbits.IRCF = 7;
-	   //OSCTUNEbits.PLLEN = 1;
+	   OSCCONbits.IRCF = 7;
+	   OSCTUNEbits.PLLEN = 1;
 	
-	//	OSCCON = 0b11111110;
+	   //OSCCON = 0b11111110;
 			//IDLEN =  0b1	
 			//IRCF =   0b111
 			//OSTS =   0b1
 			//HFIOFS = 0b1
 			//scs =    0b10 //(HF-INTOSC, I will change FOSC<3:0>, anyway)
 
-//		OSCTUNE = 0b0100000;
+       //OSCTUNE = 0b0100000;
 			//INTSRCC = 0
 			//PLLEN =   1
 			//tune  =   000000
 
-    //6Mhz 4pll to 24Mhz
-		OSCCON = 0b11111000;
+       //6Mhz 4pll to 24Mhz
+		//OSCCON = 0b11111110;
 			//pg 53
 			//IDLEN 1
 			//IRCF 111
 			//OSTS 1
-			//HFIOFS 0
-			//scs 00
- OSCTUNE = 0b1100000;
+			//HFIOFS 1
+			//scs 1x //00
+
+        
+        //OSCTUNE = 0b1100000;
 			//intsrc 1
 			//pllen 1
 			//tun 0
@@ -207,12 +210,12 @@ void startUp_OSCILLATOR(void){
 
 void startUp_device(void){
 	unsigned char segDigi[6];
-	segDigi[0] = 0;
-	segDigi[1] = 1;
-	segDigi[2] = 2;
-	segDigi[3] = 3;
-	segDigi[4] = 4;
-	segDigi[5] = 5;
+	segDigi[0] = 1;
+	segDigi[1] = 2;
+	segDigi[2] = 3;
+	segDigi[3] = 4;
+	segDigi[4] = 5;
+	segDigi[5] = 6;
 
 	startUp_interrupts();
 	startUp_OSCILLATOR();

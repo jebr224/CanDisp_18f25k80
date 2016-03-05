@@ -42,6 +42,15 @@ void updateSeg(void){
 #define on 0
 #define off 1
 
+
+			LATAbits.LATA7 = off;  //0
+			LATBbits.LATB0 = off; //1
+			LATBbits.LATB1 = off; //2
+			LATBbits.LATB4 = off; //3
+			LATBbits.LATB5 = off; //4
+			LATAbits.LATA6 = off; //5
+
+
 	switch(g_currentDigit){  // g_currentDigit
 		case 0:
 
@@ -58,7 +67,7 @@ void updateSeg(void){
 			break;
 		case 1:
 			LATAbits.LATA7 = off;  //0
-			LATBbits.LATB0 = on; //1
+			LATBbits.LATB0 = on;   //1
 			LATBbits.LATB1 = off; //2
 			LATBbits.LATB4 = off; //3
 			LATBbits.LATB5 = off; //4

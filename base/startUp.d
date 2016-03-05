@@ -1,0 +1,1 @@
+ startUp.d  startUp.p1:  startUp.c startUp.h comm.h ECAN.h seg.h
