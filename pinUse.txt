@@ -45,13 +45,19 @@ RA6  10 //(good)
 misc
 ------------------------------------
 RC2  13  (status light)
-RE3  1   (Decimal point)   (speaker?)
+RA5  7   (Decimal point)   (speaker?)
+RC3 RC4  14  15 (negative sign or I2C)
 
 CAN  
 ------------------------------------
 CANRX  RB3  24 //(good)
 CANTX  RB2  23 //(good)
 
+
+
+/////////////////////////////////////////////////////
+Not used in current application
+/////////////////////////////////////////////////////
 
 *Serial 1 (pins could be broken out for later use)
 --------------------------------------------------
