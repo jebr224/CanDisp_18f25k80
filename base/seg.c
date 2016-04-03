@@ -7,6 +7,7 @@ unsigned char g_dispValues[6];// ="12345";
 unsigned char g_currentDigit=0;
 unsigned char g_digitMask = 0xff;
 unsigned char g_count = 0;
+unsigned char negOn = 0;
 //unsigned char g_decPoint1 = 1;
 //unsigned char g_decPoint2 = 1;
 
@@ -151,6 +152,7 @@ unsigned char setFrist3SegValues(unsigned char* data){
 	int i;
 	for(i =0; i<3;i++){
 		if ((data[i] > 9 )||(data[i]<0)){
+			data[i]=0;
 			isError = TRUE;
 		}
 		g_dispValues[i] = data[i];//deep copy
@@ -161,15 +163,55 @@ unsigned char setFrist3SegValues(unsigned char* data){
 unsigned char setSecondSegValues(unsigned char* data){
 	unsigned char isError= FALSE;
 	int i;
-	for(i =3; i<6;i++){
+	for(i =0; i<3;i++){
 		if ((data[i] > 9 )||(data[i]<0)){
+			g_dispValues[i+3] = 0;
 			isError = TRUE;
 		}
-		g_dispValues[i] = data[i];//deep copy
+		g_dispValues[i+3] = data[i];//deep copy
 	}
 	return isError;
 }
 
 
+void setNeg( unsigned char in){
+	if(in == 1){
+		LATC  = LATC | 0b00001000; //neg sign on
+	}else{
+		LATC  = LATC & 0b11110111; //neg sign off
+	}
+}
 
 
+void setFirstNumber(int in){
+  unsigned char temp[3];
+  
+  if(in<0) in = -in;
+  
+  temp[0] = (in/100)% 10;
+  temp[1] = (in/10) % 10;
+  temp[2] = (in)    % 10;
+  setFrist3SegValues(temp);
+
+  return;
+}
+
+
+void setSecondNumber(int in){
+  unsigned char temp[3];
+  int inNumber = in;
+  if(inNumber<0){
+	inNumber = -inNumber;
+    setNeg(1);
+  }else
+  {
+	setNeg(0);
+  }
+  //temp[0] = temp[1] = temp[2] = 0;
+  temp[0] = (inNumber/100)% 10;
+  temp[1] = (inNumber/10) % 10; 
+  temp[2] = (inNumber)    % 10;
+  setSecondSegValues(temp);
+
+  return;
+}

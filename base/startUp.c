@@ -27,7 +27,7 @@ void high_isr(void){
 	
 	//PIR5 &= 0b111111100; //clear the interrupt flag so that another interrupt can happen
 
-		clearCANRX;
+//		clearCANRX;
 //	clearTM1;
 }
 #pragma code
@@ -149,7 +149,9 @@ void startUp_GPIO(void){
 		TRISA  = 0;	//Set all port A pins to output
 		LATA   = 0; //set output low
 		ANCON0 = 0; //set pins to digital mode
-	
+
+	//	LATA = 0xff;//0b00100000;	//test to dec on
+
    //portB setup
 		TRISB  = 0b00001000; //Set all port B pins to output//RB3 - CANRX
 		LATB   = 0; //Set output low 
@@ -161,7 +163,7 @@ void startUp_GPIO(void){
 	//portC setup
 		ODCON =0;
 		TRISC = 0b10000000; //Set all port C pins to output
-		LATC  = 0; //Set output low
+		LATC  = 0b00001000; //Set output low (testing negative)
 
 	
 

@@ -97,19 +97,8 @@
 *                        Function Prototypes 
 *
 *********************************************************************/
-void InitDevice(void);
-unsigned char ButtonPressed(void);
-void Delay(unsigned int count);
-void Heartbeat(void);
+void Delay();
 
-
-/*********************************************************************
-*
-*                            Global Variables 
-*
-*********************************************************************/
-unsigned int heartbeatCount;
-unsigned char buttonWasPressed;
 
 
 
@@ -119,64 +108,52 @@ unsigned char buttonWasPressed;
 *
 *********************************************************************/
 void main(void)
-{    
+{   
+	unsigned char u =0,j = 0,k =0;
+	unsigned char testValues[3];
+	int  t = 111;
     //InitDevice();
 	startUp_device();//startup.c
+
+	setFirstNumber(t);
+
     while(1)
     {
-		int i;
-        //if(ButtonPressed())
-        //{
-            ECAN_Transmit();
-        //}
-        
-       // if(ECAN_Receive())
-        //{
-		//	LATCbits.LATC2 = 1;
-        //}
+		int i = 0;
+		int second;
+//	    unsigned char testnumbers[6];
+//        ECAN_Transmit();
 
-        //Heartbeat();
-        
-        // Delay for one millisecond to debounce pushbutton
-        for (i=0;i<100;i++){
+		//while(1){
+		    
 
-			Delay(ONE_MS);
+			 Delay();
+			 Delay();
+			 Delay();
+
+			ECAN_Transmit();
+			second = secondNumberUpdate();
+			//setSecondNumber(second);
+		//newCanMessage();
+		//}
+		/*
+		while(i<1000)
+		{
+			 setSecondNumber(i);
+ 			 setFirstNumber(999-i);
+			 Delay();
+			 i++;
 		}
+		*/
+	//	newCanMessage();
+	//	second = secondNumberUpdate();
+		//setSecondNumber(second);
+
     }
 }
 
 
 
-/*********************************************************************
-*
-*                 Check to see if Button is pressed 
-*
-*********************************************************************/
-unsigned char ButtonPressed(void)
-{
-    unsigned char buttonPressedState = FALSE;
-    
-    // Check to see if the pushbutton is pressed
-    if(BTN1 == PRESSED)
-    {        
-        // If button wasn't previously pressed, then set current button pressed state to true
-        if(buttonWasPressed == FALSE)
-        {
-            buttonPressedState = TRUE;
-        }
-        
-        // Set flag to say button was previously pressed
-        buttonWasPressed = TRUE;
-    }
-    else
-    {
-        // Clear flag to say button was previously not pressed
-        buttonWasPressed = FALSE;
-    }    
-    
-    // Return button pressed state
-    return buttonPressedState;
-}
 
 
 /*********************************************************************
@@ -184,37 +161,18 @@ unsigned char ButtonPressed(void)
 *                 Perform a simple delay 
 *
 *********************************************************************/
-void Delay(unsigned int count)
+void Delay()
 {
     // Countdown until equal to zero and then return
-    
+// 	unsigned int i= 0xffff,
+
+//	while(i){
+		volatile j = 0xffff;
+		while(j){
+			j--;
+		}
+//		i--;
+//	}
+
+   
 }    
-
-/*********************************************************************
-*
-*             Toggle LED to show device is working 
-*
-*********************************************************************/
-void Heartbeat(void)
-{
-    // Toggle LED every 256th time this function is called
-    if (heartbeatCount < 255)
-    {
-        heartbeatCount++;
-    }
-    else
-    {
-        heartbeatCount = 0;
-       // LATDbits.LATD7 ^= 1;
-		LATCbits.LATC2 ^= 1;
-    }
-}
-
-
-
-
-
-
-
-
-

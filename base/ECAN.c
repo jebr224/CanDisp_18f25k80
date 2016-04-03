@@ -79,7 +79,7 @@
 //#define F_ECAN_Mode2      //ECAN mode 2
 
 //ECAN RxFilter15 as Mask or not, 3 Masks could work at the same time
-//#define F_ECAN_Mask01
+#define F_ECAN_Mask01
 //#define F_ECAN_RxF15Mask
 
 // ECAN bitrate define, only can choose one rate

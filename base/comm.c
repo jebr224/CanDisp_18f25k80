@@ -1,4 +1,5 @@
 
+#define genericInterface
 
 
 #include "comm.h"
@@ -18,6 +19,7 @@ extern unsigned char temp_data[8];
 
 extern unsigned char g_dispValues[6];
 
+/*
 void newCanMessage(void){
 	unsigned int id;
 	unsigned char idLow, idHigh;
@@ -57,11 +59,55 @@ void newCanMessage(void){
 		g_dispValues[4] = temp % 100 / 10;
 		g_dispValues[5] = temp % 10;
 	}
-	
+
+	//	g_dispValues[1] = 3;
+	id = ((temp_SIDH & 0b11100000) << 8) & (temp_SIDL) ;
+	if(id == 0x0224){
+     	int *number;
+		number = (int *) temp_data;
+//		setFrist3SegValues(*number);
+			
+
+	}else 
+	if(id == 0x0225){
+     	int *number;
+		number = (int *) temp_data;
+//		setSecondSegValues(*number);
+			
+	}
+
+
 	return ; 
 }
 
+*/
 
 
 
 
+
+#ifdef  genericInterface
+
+int secondNumberUpdate(){
+	unsigned int id;
+	unsigned char test;
+	int msg1 = 122;
+    int msg2 = 133;
+	
+	test = ECAN_Receive();
+	if(1){
+
+		
+	//	setFirstNumber(msg2);
+
+		id = ((temp_SIDH & 0b00000111 ) << 8) | (temp_SIDL) ;
+		if( id == 0x0224 ){
+			int *data;
+			setFirstNumber(msg1);
+			data =(int *) temp_data;
+			setSecondNumber(*data);
+			return *data;
+		}
+		
+	}
+}
