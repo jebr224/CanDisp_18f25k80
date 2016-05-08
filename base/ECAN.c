@@ -79,7 +79,7 @@
 //#define F_ECAN_Mode2      //ECAN mode 2
 
 //ECAN RxFilter15 as Mask or not, 3 Masks could work at the same time
-#define F_ECAN_Mask01
+//#define F_ECAN_Mask01
 //#define F_ECAN_RxF15Mask
 
 // ECAN bitrate define, only can choose one rate
@@ -89,6 +89,7 @@
 //#define F_ECAN_1000     //1Mbps
 
 // ECAN 
+/*
 #define   F_ECANMode2_FP        CANCON&0x0F
 #define   F_ECANFIFO_0          RXB0CONbits.RXFUL
 #define   F_ECANFIFO_1          RXB1CONbits.RXFUL
@@ -98,7 +99,7 @@
 #define   F_ECANFIFO_5          B3CONbits.RXFUL
 #define   F_ECANFIFO_6          B4CONbits.RXFUL
 #define   F_ECANFIFO_7          B5CONbits.RXFUL
-
+*/
 
 
 
@@ -185,45 +186,45 @@ void startUp_ECAN(void)
     #endif 
     
     // Setup Programmable buffers
-    //  B0 is a receive buffer AND B2,B3,B4,B5 are Transmit buffers
-    BSEL0 = 0xFC;   //1111 11--
+    //  B0 is a receive buffer AND B1 B2,B3,B4,B5 are Transmit buffers
+    BSEL0 = 0xFE;   //1111 111-
     
     // Initialize Receive Masks
     #ifdef F_ECAN_Mask01
     RXM0EIDH = 0x00;    // 0's for EID and SID
     RXM0EIDL = 0x00;
-    RXM0SIDH = 0xFF;    // Standard ID FILTER
-    RXM0SIDL = 0xE0;
+    RXM0SIDH = 0x00;    // Standard ID FILTER
+    RXM0SIDL = 0x00;
     
     RXM1EIDH = 0x00;    
     RXM1EIDL = 0x00;
-    RXM1SIDH = 0xFF;
-    RXM1SIDL = 0xE0;
+    RXM1SIDH = 0x00;
+    RXM1SIDL = 0x00;
     #endif 
 
     #ifdef F_ECAN_RxF15Mask
     // RxF15 as msak
     RXF15EIDH = 0x00;
     RXF15EIDL = 0x00;
-    RXF15SIDH = 0xFF;
-    RXF15SIDL = 0xE0;
+    RXF15SIDH = 0x00;
+    RXF15SIDL = 0x00;
     #endif 
 
     // Enable Filters
     // 0,1 Filter
-    RXFCON0 = 0x00;//3;     // 
+    RXFCON0 = 0x00;     // 
     RXFCON1 = 0x00;     //Disable all
     
     // Assign Filters to Masks
     #ifdef F_ECAN_Mask01
-    MSEL0 = 0xF4;     //Assign Filters 0 to Mask 0 F1 to MASK 1   // No mask
+    MSEL0 = 0xFF;     //Assign Filters 0 to Mask 0 F1 to MASK 1   // No mask
     MSEL1 = 0xFF;     //Assign Filters 4-7 to       // No mask
     MSEL2 = 0xFF;     //Assign Filters 8-11 to      // No mask
     MSEL3 = 0xFF;     //Assign Filters 12-15 to     // No mask
     #endif 
     
     #ifdef F_ECAN_RxF15Mask
-    MSEL0 = 0xFA;     //Assign Filters 0-1 to Mask 3 // and F2-3  No mask
+    MSEL0 = 0xFF;     //Assign Filters 0-1 to Mask 3 // and F2-3  No mask
     MSEL1 = 0xFF;     //Assign Filters 4-7 to       // No mask
     MSEL2 = 0xFF;     //Assign Filters 8-11 to      // No mask
     MSEL3 = 0xFF;     //Assign Filters 12-15 to     // No mask
@@ -232,7 +233,7 @@ void startUp_ECAN(void)
     // Assign Filters to Buffers
     #ifdef F_ECAN_Mode1
     //Assign the rest of the buffers with no filter
-    RXFBCON0 = 0x10;
+    RXFBCON0 = 0xFF;
     RXFBCON1 = 0xFF;
     
     RXFBCON2 = 0xFF;
@@ -247,21 +248,21 @@ void startUp_ECAN(void)
     //  Filter 0 = 0x196
     RXF0EIDH = 0x00;
     RXF0EIDL = 0x00;
-    RXF0SIDH = 0x32;
-    RXF0SIDL = 0xC0;
+    RXF0SIDH = 0x00;
+    RXF0SIDL = 0x00;
     //  Filter 1 = 0x19e
     RXF1EIDH = 0x00;
     RXF1EIDL = 0x00;
-    RXF1SIDH = 0x33;
-    RXF1SIDL = 0xC0;
+    RXF1SIDH = 0x00;
+    RXF1SIDL = 0x00;
 
     // Enter CAN module into normal mode
     CANCON = 0x00;
     while(CANSTATbits.OPMODE==0x00);
 
     // Set Receive Mode for buffers
-    RXB0CON = 0x00;
-    RXB1CON = 0x00;
+    RXB0CON = 0b01100000;
+    RXB1CON = 0b01100000;
 
 }
 
@@ -408,13 +409,6 @@ unsigned char ECAN_Receive( void )
         RXMsgFlag = 0x00;
         PIR5bits.RXB1IF = 0; //A CAN Receive Buffer has received a new message 
 	
-//extern, for the bold
-//		*idHigh =  temp_SIDH ;
-//		*idLow	=  temp_SIDL  ;
-//		*len = temp_DLC ;
-//		for(i=0;i<temp_DLC;i++){
-//			data[i] = temp_data[i];//deep copy
-//		}
         return TRUE;
     }
     else
@@ -439,7 +433,7 @@ void ECAN_Transmit(void)
     TXB0SIDH = 0x6B;
     TXB0SIDL = 0xC0;
 
-    TXB0DLC = 0;\\; 0x03;
+    TXB0DLC = 0x03;
     TXB0D0 = 0xAA;
     TXB0D1 = 0xCC;
     TXB0D2 = 0x55;
@@ -449,8 +443,36 @@ void ECAN_Transmit(void)
     TXB0D6 = 0x00;
     TXB0D7 = 0x00;
     
-    TXB0CONbits.TXREQ = 1; //Set the buffer to transmit
-
-    
+    TXB0CONbits.TXREQ = 1; //Set the buffer to transmit    
 }
 
+
+
+/*********************************************************************
+*
+*                      Transmit User defined message
+*
+*********************************************************************/
+void ECAN_Transmit_user_msg(unsigned char id_H,unsigned char id_L, unsigned char len, unsigned char * data)
+{
+	unsigned char *split;
+//	split = (unsigned char *) &id;
+    TXB0EIDH = 0; //split[1];
+    TXB0EIDL = 0;//split[0];
+    
+    //0x35E    0110 1011 110
+    TXB0SIDH =  id_H;// split[1];// (unsigned char) ((id >> 8) & 0b00000111);;
+    TXB0SIDL =  id_L;//split[0];//(unsigned char) (id);
+
+    TXB0DLC = len;
+    TXB0D0 = data[0];
+    TXB0D1 = data[1];
+    TXB0D2 = data[2];
+    TXB0D3 = data[3];
+    TXB0D4 = data[4];
+    TXB0D5 = data[5];
+    TXB0D6 = data[6];
+    TXB0D7 = data[7];
+    
+    TXB0CONbits.TXREQ = 1; //Set the buffer to transmit    
+}

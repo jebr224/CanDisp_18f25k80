@@ -65,6 +65,14 @@
 #include <p18cxxx.h>
 #include "ECAN.h"
 #include "startUp.h"
+/*
+extern unsigned char temp_EIDH;
+extern unsigned char temp_EIDL;
+extern unsigned char temp_SIDH;
+extern unsigned char temp_SIDL;
+extern unsigned char temp_DLC;
+extern unsigned char temp_data[8];
+*/
 
 
 
@@ -109,52 +117,60 @@ void Delay();
 *********************************************************************/
 void main(void)
 {   
-	unsigned char u =0,j = 0,k =0;
-	unsigned char testValues[3];
-	int  t = 111;
+	unsigned char u = 0,j = 0,k = 0x12;
+	unsigned char testValues[3]={1,2,4};
+	int  t = 123;
+    unsigned int i =0;
+ 
     //InitDevice();
 	startUp_device();//startup.c
 
 	setFirstNumber(t);
 
-    while(1)
+   while(1)
     {
-		int i = 0;
-		int second;
-//	    unsigned char testnumbers[6];
-//        ECAN_Transmit();
+		i = i+1;
+		j = j+1;
+		Delay();
+		Delay();
+		Delay();
+		Delay();
+		Delay();
+		Delay();
+		Delay();
+		Delay();
+		Delay();
+		Delay();
+		Delay();
+		Delay();
+		Delay();
+		Delay();        
 
-		//while(1){
-		    
 
-			 Delay();
-			 Delay();
-			 Delay();
+		setFirstNumber(i);
 
-			ECAN_Transmit();
-			second = secondNumberUpdate();
-			//setSecondNumber(second);
-		//newCanMessage();
-		//}
-		/*
-		while(i<1000)
-		{
-			 setSecondNumber(i);
- 			 setFirstNumber(999-i);
-			 Delay();
-			 i++;
-		}
-		*/
-	//	newCanMessage();
-	//	second = secondNumberUpdate();
-		//setSecondNumber(second);
+		ECAN_Transmit_user_msg(j,u,0,testValues);
+		
+		if( ECAN_Receive () ){
+			int id;
+			//ECAN_Transmit_user_msg(0x11,0x11,2,testValues);
+				id = ((temp_SIDH & 0b00000111 ) << 8) | (temp_SIDL) ;
+			if(id == 0x0224)
+			{
+				if(*temp_data == 0x01 && temp_DLC ==3 ){
+					int number = (unsigned int) temp_data[1];
+					setSecondNumber(number);
 
-    }
+					}
+			}
+	
+		
+    	}
 }
 
 
 
-
+}
 
 /*********************************************************************
 *
@@ -163,16 +179,10 @@ void main(void)
 *********************************************************************/
 void Delay()
 {
-    // Countdown until equal to zero and then return
-// 	unsigned int i= 0xffff,
-
-//	while(i){
-		volatile j = 0xffff;
+		volatile int j = 0xffff;
 		while(j){
 			j--;
 		}
-//		i--;
-//	}
 
    
 }    

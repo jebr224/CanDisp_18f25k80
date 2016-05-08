@@ -86,6 +86,19 @@ unsigned char ECAN_Receive(void);
 
 void ECAN_Transmit(void);
 
+extern unsigned char temp_EIDH;
+extern unsigned char temp_EIDL;
+extern unsigned char temp_SIDH;
+extern unsigned char temp_SIDL;
+extern unsigned char temp_DLC;
+extern unsigned char temp_data[8];
+
+
+
+
 
 
 #endif
+
+
+

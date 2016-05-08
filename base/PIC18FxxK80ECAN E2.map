@@ -1,5 +1,5 @@
 MPLINK 5.00, LINKER
-Linker Map File - Created Sat Apr 02 22:32:28 2016
+Linker Map File - Created Wed May 04 20:35:22 2016
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
@@ -7,35 +7,35 @@ Linker Map File - Created Sat Apr 02 22:32:28 2016
                _entry_scn       code   0x000000    program   0x000006
            .code___init.o       code   0x000006    program   0x000002
               high_vector       code   0x000008    program   0x000006
-         .romdata_c018i.o    romdata   0x00000e    program   0x000000
         .romdata___init.o    romdata   0x00000e    program   0x000000
       .romdata_fxd1616u.o    romdata   0x00000e    program   0x000000
           .romdata_main.o    romdata   0x00000e    program   0x000000
           .romdata_comm.o    romdata   0x00000e    program   0x000000
-           .romdata_seg.o    romdata   0x00000e    program   0x000000
           .romdata_ECAN.o    romdata   0x00000e    program   0x000000
-           .idata_seg.o_i    romdata   0x00000e    program   0x000004
+           .romdata_seg.o    romdata   0x00000e    program   0x000000
        .idata_startUp.o_i    romdata   0x00000e    program   0x000000
        .romdata_startUp.o    romdata   0x00000e    program   0x000000
+           .idata_seg.o_i    romdata   0x00000e    program   0x000004
+         .romdata_c018i.o    romdata   0x00000e    program   0x000000
         .idata___init.o_i    romdata   0x000012    program   0x000000
       .idata_fxd1616u.o_i    romdata   0x000012    program   0x000000
+             .code_comm.o       code   0x000012    program   0x000000
           .idata_comm.o_i    romdata   0x000012    program   0x000000
           .idata_ECAN.o_i    romdata   0x000012    program   0x000000
-         .idata_c018i.o_i    romdata   0x000012    program   0x000000
-            .code_c018i.o       code   0x000012    program   0x000000
           .idata_main.o_i    romdata   0x000012    program   0x000000
+            .code_c018i.o       code   0x000012    program   0x000000
+         .idata_c018i.o_i    romdata   0x000012    program   0x000000
                low_vector       code   0x000018    program   0x000006
                    .cinit    romdata   0x00001e    program   0x00000e
               .code_seg.o       code   0x00002c    program   0x00064c
-             .code_ECAN.o       code   0x000678    program   0x0001ba
-          .code_startUp.o       code   0x000832    program   0x000190
-             .code_comm.o       code   0x0009c2    program   0x0000ce
-             .code_main.o       code   0x000a90    program   0x0000b0
-                     PROG       code   0x000b40    program   0x0000a6
-               _cinit_scn       code   0x000be6    program   0x00009e
-         .code_fxd1616u.o       code   0x000c84    program   0x00002c
-                    .code       code   0x000cb0    program   0x000020
-             _startup_scn       code   0x000cd0    program   0x00001c
+             .code_ECAN.o       code   0x000678    program   0x0002a6
+             .code_main.o       code   0x00091e    program   0x0001b6
+          .code_startUp.o       code   0x000ad4    program   0x000198
+                     PROG       code   0x000c6c    program   0x0000a6
+               _cinit_scn       code   0x000d12    program   0x00009e
+         .code_fxd1616u.o       code   0x000db0    program   0x00002c
+                    .code       code   0x000ddc    program   0x000020
+             _startup_scn       code   0x000dfc    program   0x00001c
     .config_300000_main.o    romdata   0x300000    program   0x000001
                 MATH_DATA      udata   0x000000       data   0x000014
                  .tmpdata      udata   0x000014       data   0x000005
@@ -67,9 +67,9 @@ Linker Map File - Created Sat Apr 02 22:32:28 2016
                                Start         End      
                            ---------   ---------      
                             0x000000    0x000011      
-                            0x000018    0x000ceb      
+                            0x000018    0x000e17      
                             0x300000    0x300000      
-            3303 out of 33816 program addresses used, program memory utilization is 9%
+            3603 out of 33816 program addresses used, program memory utilization is 10%
 
 
 
@@ -77,46 +77,46 @@ Linker Map File - Created Sat Apr 02 22:32:28 2016
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
                   BCDpins   0x0000d2    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\seg.c
-                   D1616S   0x000b62    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                D1616SNEG   0x000b70    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                 D1616SOK   0x000b6c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                  D1616SX   0x000b82    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                  DA1616S   0x000b52    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                    Delay   0x000b04    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\main.c
-             ECAN_Receive   0x00070e    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\ECAN.c
-            ECAN_Transmit   0x000808    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\ECAN.c
-                 FXD1616S   0x000b40    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                 FXD1616U   0x000c84    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616u.c
-                 FXM1616S   0x000b8c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616s.asm
-               TSIGN1616A   0x000bd8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616s.asm
+                   D1616S   0x000c8e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                D1616SNEG   0x000c9c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                 D1616SOK   0x000c98    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                  D1616SX   0x000cae    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                  DA1616S   0x000c7e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                    Delay   0x000a98    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\main.c
+             ECAN_Receive   0x0006ea    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\ECAN.c
+            ECAN_Transmit   0x0007e4    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\ECAN.c
+   ECAN_Transmit_user_msg   0x000810    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\ECAN.c
+                 FXD1616S   0x000c6c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                 FXD1616U   0x000db0    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616u.c
+                 FXM1616S   0x000cb8    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616s.asm
+               TSIGN1616A   0x000d04    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616s.asm
+       ___return_lbl00000   0x000dda    program     static                          
        ___return_lbl00000   0x000004    program     static                          
-       ___return_lbl00000   0x000cae    program     static                          
+       ___return_lbl00001   0x000e16    program     static                          
        ___return_lbl00001   0x00000c    program     static                          
-       ___return_lbl00001   0x000cea    program     static                          
-       ___return_lbl00002   0x000c82    program     static                          
+       ___return_lbl00002   0x000dae    program     static                          
        ___return_lbl00003   0x00001c    program     static                          
                __config_0   0x300000    program     static C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\main.c
                    __init   0x000006    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
-            __zero_memory   0x000cb0    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
-                _do_cinit   0x000be6    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+            __zero_memory   0x000ddc    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
+                _do_cinit   0x000d12    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                    _entry   0x000000    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                 _startup   0x000cd0    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                compare_l   0x000cc6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
-                copy_loop   0x000c58    program     static                          
-            copy_one_byte   0x000c5e    program     static                          
-                     done   0x000c82    program     static                          
-             done_copying   0x000c6c    program     static                          
-                  endloop   0x000caa    program     static                          
+                 _startup   0x000dfc    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                compare_l   0x000df2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
+                copy_loop   0x000d84    program     static                          
+            copy_one_byte   0x000d8a    program     static                          
+                     done   0x000dae    program     static                          
+             done_copying   0x000d98    program     static                          
+                  endloop   0x000dd6    program     static                          
            high_interrupt   0x000008    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
-                 high_isr   0x000832    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
-                     loop   0x000ce0    program     static                          
-                     loop   0x000c8e    program     static                          
-                   loop_h   0x000cbe    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
-                   loop_l   0x000cc8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
+                 high_isr   0x000ad4    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
+                     loop   0x000e0c    program     static                          
+                     loop   0x000dba    program     static                          
+                   loop_h   0x000dea    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
+                   loop_l   0x000df4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
             low_interrupt   0x000018    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
-                  low_isr   0x000844    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
-                     main   0x000a90    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\main.c
-       secondNumberUpdate   0x0009c2    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\comm.c
+                  low_isr   0x000ae6    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
+                     main   0x00091e    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\main.c
            setFirstNumber   0x00041c    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\seg.c
        setFrist3SegValues   0x0001ec    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\seg.c
                    setNeg   0x0003f8    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\seg.c
@@ -124,14 +124,14 @@ Linker Map File - Created Sat Apr 02 22:32:28 2016
        setSecondSegValues   0x0002ea    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\seg.c
              setSegValues   0x00010c    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\seg.c
              startUp_ECAN   0x000678    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\ECAN.c
-             startUp_GPIO   0x000920    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
-       startUp_OSCILLATOR   0x000942    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
-           startUp_device   0x000950    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
-       startUp_interrupts   0x0008dc    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
-            startUp_timer   0x000918    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
-                     test   0x000c00    program     static                          
+             startUp_GPIO   0x000bc2    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
+       startUp_OSCILLATOR   0x000bec    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
+           startUp_device   0x000bfa    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
+       startUp_interrupts   0x000b7e    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
+            startUp_timer   0x000bba    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
+                     test   0x000d2c    program     static                          
                 updateSeg   0x00002c    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\seg.c
-               zero_block   0x000cbe    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
+               zero_block   0x000dea    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
                    ADCON0   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
                ADCON0bits   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
                    ADCON1   0x000fc1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
@@ -985,9 +985,9 @@ Linker Map File - Created Sat Apr 02 22:32:28 2016
                  __TEMPB1   0x000012       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\temparg.asm
                  __TEMPB2   0x000011       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\temparg.asm
                  __TEMPB3   0x000010       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\temparg.asm
-                  __tmp_0   0x000014       data     static C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\comm.c
                   __tmp_0   0x000014       data     static C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\seg.c
                   __tmp_0   0x000014       data     static C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\ECAN.c
+                  __tmp_0   0x000014       data     static C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\main.c
                 curr_byte   0x000e10       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                curr_entry   0x000e12       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                  data_ptr   0x000e14       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
@@ -1025,45 +1025,45 @@ Linker Map File - Created Sat Apr 02 22:32:28 2016
            setFirstNumber   0x00041c    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\seg.c
           setSecondNumber   0x000536    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\seg.c
              startUp_ECAN   0x000678    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\ECAN.c
-             ECAN_Receive   0x00070e    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\ECAN.c
-            ECAN_Transmit   0x000808    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\ECAN.c
-                 high_isr   0x000832    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
-                  low_isr   0x000844    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
-       startUp_interrupts   0x0008dc    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
-            startUp_timer   0x000918    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
-             startUp_GPIO   0x000920    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
-       startUp_OSCILLATOR   0x000942    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
-           startUp_device   0x000950    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
-       secondNumberUpdate   0x0009c2    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\comm.c
-                     main   0x000a90    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\main.c
-                    Delay   0x000b04    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\main.c
-                 FXD1616S   0x000b40    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                  DA1616S   0x000b52    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                   D1616S   0x000b62    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                 D1616SOK   0x000b6c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                D1616SNEG   0x000b70    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                  D1616SX   0x000b82    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                 FXM1616S   0x000b8c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616s.asm
-               TSIGN1616A   0x000bd8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616s.asm
-                _do_cinit   0x000be6    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     test   0x000c00    program     static                          
-                copy_loop   0x000c58    program     static                          
-            copy_one_byte   0x000c5e    program     static                          
-             done_copying   0x000c6c    program     static                          
-                     done   0x000c82    program     static                          
-       ___return_lbl00002   0x000c82    program     static                          
-                 FXD1616U   0x000c84    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616u.c
-                     loop   0x000c8e    program     static                          
-                  endloop   0x000caa    program     static                          
-       ___return_lbl00000   0x000cae    program     static                          
-            __zero_memory   0x000cb0    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
-                   loop_h   0x000cbe    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
-               zero_block   0x000cbe    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
-                compare_l   0x000cc6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
-                   loop_l   0x000cc8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
-                 _startup   0x000cd0    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     loop   0x000ce0    program     static                          
-       ___return_lbl00001   0x000cea    program     static                          
+             ECAN_Receive   0x0006ea    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\ECAN.c
+            ECAN_Transmit   0x0007e4    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\ECAN.c
+   ECAN_Transmit_user_msg   0x000810    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\ECAN.c
+                     main   0x00091e    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\main.c
+                    Delay   0x000a98    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\main.c
+                 high_isr   0x000ad4    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
+                  low_isr   0x000ae6    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
+       startUp_interrupts   0x000b7e    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
+            startUp_timer   0x000bba    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
+             startUp_GPIO   0x000bc2    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
+       startUp_OSCILLATOR   0x000bec    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
+           startUp_device   0x000bfa    program     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\startUp.c
+                 FXD1616S   0x000c6c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                  DA1616S   0x000c7e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                   D1616S   0x000c8e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                 D1616SOK   0x000c98    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                D1616SNEG   0x000c9c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                  D1616SX   0x000cae    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                 FXM1616S   0x000cb8    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616s.asm
+               TSIGN1616A   0x000d04    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616s.asm
+                _do_cinit   0x000d12    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     test   0x000d2c    program     static                          
+                copy_loop   0x000d84    program     static                          
+            copy_one_byte   0x000d8a    program     static                          
+             done_copying   0x000d98    program     static                          
+                     done   0x000dae    program     static                          
+       ___return_lbl00002   0x000dae    program     static                          
+                 FXD1616U   0x000db0    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616u.c
+                     loop   0x000dba    program     static                          
+                  endloop   0x000dd6    program     static                          
+       ___return_lbl00000   0x000dda    program     static                          
+            __zero_memory   0x000ddc    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
+               zero_block   0x000dea    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
+                   loop_h   0x000dea    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
+                compare_l   0x000df2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
+                   loop_l   0x000df4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f25k80.asm
+                 _startup   0x000dfc    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     loop   0x000e0c    program     static                          
+       ___return_lbl00001   0x000e16    program     static                          
                __config_0   0x300000    program     static C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\main.c
                      SIGN   0x000000       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cmath18.asm
             __FPFLAGSbits   0x000001       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cmath18.asm
@@ -1091,9 +1091,9 @@ Linker Map File - Created Sat Apr 02 22:32:28 2016
                  __TEMPB1   0x000012       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\temparg.asm
                    __TEMP   0x000013       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\temparg.asm
                  __TEMPB0   0x000013       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\temparg.asm
-                  __tmp_0   0x000014       data     static C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\comm.c
                   __tmp_0   0x000014       data     static C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\seg.c
                   __tmp_0   0x000014       data     static C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\ECAN.c
+                  __tmp_0   0x000014       data     static C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\main.c
                 temp_EIDH   0x000e00       data     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\ECAN.c
                 temp_EIDL   0x000e01       data     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\ECAN.c
                 temp_SIDH   0x000e02       data     extern C:\Users\John\workshop\CanDisp_0_18f25k80\CanDisp_0_18f25k80\base\ECAN.c

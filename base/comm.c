@@ -7,16 +7,14 @@
 #include "ECAN.h"
 #include "ws22.def"
 #include <p18cxxx.h>
-
-//this is some 1990's C codeing
-
+/*
 extern unsigned char temp_EIDH; //find this symbol, and link me  to it
 extern unsigned char temp_EIDL;
 extern unsigned char temp_SIDH;
 extern unsigned char temp_SIDL;
 extern unsigned char temp_DLC;
 extern unsigned char temp_data[8];
-
+*/
 extern unsigned char g_dispValues[6];
 
 /*
@@ -84,30 +82,41 @@ void newCanMessage(void){
 
 
 
-
+/*
 
 #ifdef  genericInterface
 
 int secondNumberUpdate(){
 	unsigned int id;
 	unsigned char test;
-	int msg1 = 122;
-    int msg2 = 133;
+	int stuff;
+	int msg1 = 123;
+    int msg2 = 145;
 	
-	test = ECAN_Receive();
-	if(1){
 
-		
-	//	setFirstNumber(msg2);
+	if(ECAN_Receive()){
+	setFirstNumber(msg1);
 
 		id = ((temp_SIDH & 0b00000111 ) << 8) | (temp_SIDL) ;
 		if( id == 0x0224 ){
 			int *data;
 			setFirstNumber(msg1);
 			data =(int *) temp_data;
-			setSecondNumber(*data);
-			return *data;
+			stuff = *data;
+
+			
 		}
 		
 	}
+    return stuff;
 }
+
+int checkForMessages(){
+	if( ECAN_Receive()){
+	
+	return 1;
+	}else return 0;
+
+
+}
+*/

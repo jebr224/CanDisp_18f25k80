@@ -47,11 +47,6 @@ void high_interrupt(void){
 
 #pragma interrupt low_isr
 void low_isr(void){
-	//LATBbits.LATB3 ^= 1;       //Toggle portB pin 3 (red LED)
-	//segUpDate
-	//	 updateSeg();
-	//PIR1 &= 0b1111011;///clear the interrupt flag (TM0)so that another interrupt can happen
-//	newCanMessage(); 
 
 	updateSeg();
 
@@ -147,25 +142,26 @@ void startUp_GPIO(void){
 
     //portA setup
 		TRISA  = 0;	//Set all port A pins to output
-		LATA   = 0; //set output low
+		LATA   = 0b00100000; 0; //set output low
 		ANCON0 = 0; //set pins to digital mode
 
 	//	LATA = 0xff;//0b00100000;	//test to dec on
 
    //portB setup
-		TRISB  = 0b00001000; //Set all port B pins to output//RB3 - CANRX
-		LATB   = 0; //Set output low 
+		TRISB  = 0b00001100; //Set all port B pins to output//RB3 - CANRX
+		LATB   = 0b00001100; //Set output low 
 		ANCON0 = 0; //I think I need this
 		ANCON1 = 0; //set it all to digital
 		ODCON  = 0; //Open-drain capability is disabled
- 
+      
 
 	//portC setup
 		ODCON =0;
+		SSPCON1 = SSPCON1 & 0b1101111;
 		TRISC = 0b10000000; //Set all port C pins to output
-		LATC  = 0b00001000; //Set output low (testing negative)
+		LATC  = 0b10000000;//0b00011000; //Set output low (testing negative)
 
-	
+	while(1){}
 
 	return;
 }

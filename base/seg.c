@@ -176,9 +176,12 @@ unsigned char setSecondSegValues(unsigned char* data){
 
 void setNeg( unsigned char in){
 	if(in == 1){
-		LATC  = LATC | 0b00001000; //neg sign on
+		//LATC  = LATC | 0b00001000; //neg sign on
+
+		LATC  = LATC | 0b00010000; //neg sign 
 	}else{
-		LATC  = LATC & 0b11110111; //neg sign off
+		//LATC  = LATC & 0b11110111; //neg sign off
+		LATC   = LATC & 0b11101111; 
 	}
 }
 
